@@ -1,0 +1,72 @@
+---
+import CountdownTimer from './CountdownTimer.tsx';
+interface Props {
+  checkoutUrl: string;
+}
+const { checkoutUrl } = Astro.props;
+---
+
+<section class="relative py-24 overflow-hidden" style="background: linear-gradient(135deg, #0d0020 0%, #1a0040 30%, #0d0025 60%, #050510 100%);">
+  <!-- Orbs -->
+  <div class="glow-orb w-[500px] h-[500px] bg-purple-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40"></div>
+  <div class="glow-orb w-[300px] h-[300px] bg-blue-glow -top-16 right-16 opacity-30"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div data-animate>
+      <span class="section-label">Limited Time Offer</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-3">
+        This Deal <span class="text-gradient">Expires Soon</span>
+      </h2>
+      <p class="text-galaxy-stardust/80 text-lg mb-8">
+        We're running a limited 20% off promotion. Once the timer hits zero, the price goes back up.
+      </p>
+    </div>
+
+    <!-- Countdown timer -->
+    <div class="mb-8" data-animate style="--delay: 100ms">
+      <CountdownTimer client:load />
+    </div>
+
+    <!-- Stock scarcity -->
+    <div class="inline-flex items-center gap-2 bg-galaxy-red/10 border border-galaxy-red/30 rounded-full px-5 py-2 mb-8" data-animate style="--delay: 200ms">
+      <span class="w-2 h-2 bg-galaxy-red rounded-full animate-pulse-dot"></span>
+      <span class="text-red-400 text-sm font-semibold">Only 23 units left in stock — selling fast</span>
+    </div>
+
+    <!-- Price block -->
+    <div class="glass-card p-8 mb-8 text-center" data-animate style="--delay: 250ms">
+      <div class="flex items-center justify-center gap-4 mb-2">
+        <span class="text-5xl font-black text-white">$24.95</span>
+        <div class="text-left">
+          <span class="text-galaxy-muted line-through text-xl block">$31.19</span>
+          <span class="price-badge">SAVE 20%</span>
+        </div>
+      </div>
+      <p class="text-galaxy-muted text-sm">+ Free shipping worldwide</p>
+    </div>
+
+    <!-- CTA -->
+    <div data-animate style="--delay: 300ms">
+      <a href={checkoutUrl} class="btn-primary text-xl py-5 px-12 w-full sm:w-auto inline-flex">
+        🚀 CLAIM MY DISCOUNT
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <p class="text-galaxy-muted text-xs mt-3">Secure checkout · 30-day money back guarantee</p>
+    </div>
+
+    <!-- Guarantee badges -->
+    <div class="grid grid-cols-3 gap-4 mt-10" data-animate style="--delay: 400ms">
+      {[
+        { icon: '💰', title: '30-Day Money Back', sub: 'Not happy? Full refund, no questions.' },
+        { icon: '🔐', title: 'Secure Checkout', sub: '256-bit SSL encryption.' },
+        { icon: '🚚', title: 'Free Shipping', sub: 'Ships within 24 hours.' },
+      ].map((g) => (
+        <div class="glass-card p-4 text-center">
+          <p class="text-2xl mb-2">{g.icon}</p>
+          <p class="text-white text-xs font-bold leading-tight mb-1">{g.title}</p>
+          <p class="text-galaxy-muted text-[11px]">{g.sub}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

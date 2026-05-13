@@ -1,0 +1,131 @@
+---
+const reviews = [
+  {
+    name: 'Sarah M.',
+    location: 'Austin, TX',
+    avatar: 'SM',
+    avatarColor: '#7c3aed',
+    stars: 5,
+    title: '"My room literally feels like a movie now."',
+    body: "I bought this on a whim after seeing it on TikTok and I literally gasped when I turned it on for the first time. The moon projection on my ceiling looks so real. My friends all want one now.",
+    tag: 'Verified Buyer',
+    delay: '0',
+  },
+  {
+    name: 'Jake R.',
+    location: 'Portland, OR',
+    avatar: 'JR',
+    avatarColor: '#4f46e5',
+    stars: 5,
+    title: '"Best TikTok purchase I\'ve ever made."',
+    body: "Way better than I expected for the price. The different planet slides are so cool — I use the Saturn one as my default now. Sleep has been so much better since I started using this instead of my phone.",
+    tag: 'Verified Buyer',
+    delay: '100',
+  },
+  {
+    name: 'Priya D.',
+    location: 'Chicago, IL',
+    avatar: 'PD',
+    avatarColor: '#a855f7',
+    stars: 5,
+    title: '"Way cooler than LED strips."',
+    body: "I had RGB everywhere and nothing felt special. This is different — it creates an actual atmosphere, not just a color. My boyfriend set it up for our movie nights and we use it every single time now.",
+    tag: 'Verified Buyer',
+    delay: '200',
+  },
+  {
+    name: 'Tyler K.',
+    location: 'Miami, FL',
+    avatar: 'TK',
+    avatarColor: '#6366f1',
+    stars: 5,
+    title: '"Bought it for my daughter. She loves it."',
+    body: "She's 7 and was scared of the dark. Since we got this she actually looks forward to bedtime — she picks a different planet every night. Best purchase as a parent in years.",
+    tag: 'Verified Buyer',
+    delay: '300',
+  },
+  {
+    name: 'Aisha L.',
+    location: 'New York, NY',
+    avatar: 'AL',
+    avatarColor: '#8b5cf6',
+    stars: 5,
+    title: '"My content has never looked better."',
+    body: "I'm a lifestyle content creator and this is now in the background of literally every video I post. The galaxy projection just makes everything look premium. 10/10 recommend.",
+    tag: 'Verified Buyer',
+    delay: '400',
+  },
+  {
+    name: 'Marcus T.',
+    location: 'Seattle, WA',
+    avatar: 'MT',
+    avatarColor: '#3b82f6',
+    stars: 5,
+    title: '"Surprised my girlfriend. She cried."',
+    body: "Set it up with candles and roses before she got home. She walked in to a full galaxy projected on the ceiling. Best $25 I've ever spent on a date night. She wants two of them now.",
+    tag: 'Verified Buyer',
+    delay: '500',
+  },
+];
+---
+
+<section class="relative py-24 bg-galaxy-deep overflow-hidden">
+  <div class="glow-orb w-[400px] h-[400px] bg-purple-glow -top-16 left-1/2 -translate-x-1/2 opacity-20"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-5" data-animate>
+      <span class="section-label">Social Proof</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4">
+        10,000+ People Are <span class="text-gradient">Obsessed</span>
+      </h2>
+      <!-- Aggregate rating -->
+      <div class="inline-flex items-center gap-3 bg-galaxy-gold/10 border border-galaxy-gold/30 rounded-2xl px-6 py-3 mt-2">
+        <div class="flex gap-1">
+          {[1,2,3,4,5].map(() => <span class="text-galaxy-gold text-xl">★</span>)}
+        </div>
+        <div class="text-left">
+          <p class="text-white font-bold text-lg leading-none">4.9 out of 5</p>
+          <p class="text-galaxy-muted text-xs">Based on 2,847 verified reviews</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+      {reviews.map((r) => (
+        <div
+          class="glass-card p-7 flex flex-col gap-4 hover:border-galaxy-purple/40 transition-all duration-300 hover:-translate-y-1"
+          data-animate
+          style={`--delay: ${r.delay}ms`}
+        >
+          <!-- Stars -->
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(() => <span class="text-galaxy-gold text-base">★</span>)}
+          </div>
+
+          <!-- Review title -->
+          <p class="text-white font-bold text-base leading-snug">{r.title}</p>
+
+          <!-- Review body -->
+          <p class="text-galaxy-muted text-sm leading-relaxed flex-1">{r.body}</p>
+
+          <!-- Reviewer -->
+          <div class="flex items-center gap-3 pt-3 border-t border-white/10">
+            <div
+              class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
+              style={`background: ${r.avatarColor};`}
+            >
+              {r.avatar}
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-white text-sm font-semibold">{r.name}</p>
+              <p class="text-galaxy-muted text-xs">{r.location}</p>
+            </div>
+            <span class="flex-shrink-0 text-xs text-green-400 bg-green-400/10 border border-green-400/30 px-2 py-0.5 rounded-full">
+              ✓ {r.tag}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

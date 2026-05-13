@@ -1,0 +1,66 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Galaxy Moon Projection Lamp — Turn Your Room Into Another Universe',
+  description = 'Create a relaxing galaxy atmosphere in seconds with immersive moon and planet projections. USB-powered, 16 interchangeable slides. Shop now.',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="product" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-galaxy-void text-white overflow-x-hidden">
+    <slot />
+
+    <script>
+      // Scroll-triggered fade-up animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+
+      // Sticky cart bar — show after hero leaves viewport
+      const heroEl = document.getElementById('hero');
+      const stickyCart = document.getElementById('sticky-cart');
+      if (heroEl && stickyCart) {
+        const cartObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (!entry.isIntersecting) {
+              stickyCart.classList.add('show');
+            } else {
+              stickyCart.classList.remove('show');
+            }
+          },
+          { threshold: 0 }
+        );
+        cartObserver.observe(heroEl);
+      }
+    </script>
+  </body>
+</html>

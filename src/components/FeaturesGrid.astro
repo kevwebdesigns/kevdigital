@@ -1,0 +1,73 @@
+---
+const features = [
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="4" height="4" rx="1"/><rect x="10" y="3" width="4" height="4" rx="1"/><rect x="17" y="3" width="4" height="4" rx="1"/><rect x="3" y="10" width="4" height="4" rx="1"/><rect x="10" y="10" width="4" height="4" rx="1"/><rect x="17" y="10" width="4" height="4" rx="1"/><rect x="3" y="17" width="4" height="4" rx="1"/><rect x="10" y="17" width="4" height="4" rx="1"/><rect x="17" y="17" width="4" height="4" rx="1"/></svg>`,
+    title: '16 Interchangeable Slides',
+    desc: 'Moon, Earth, Mars, Jupiter, Saturn, Neptune, galaxies, aurora & more. Switch scenes in seconds.',
+    delay: '0',
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2l-2.5 2.5"/><path d="M2.5 21.5l2.5-2.5"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="5"/></svg>`,
+    title: '360° Coverage',
+    desc: 'Covers up to 12m² of surface area. Fills your entire ceiling and walls with galaxy visuals.',
+    delay: '80',
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>`,
+    title: 'Eye-Friendly Soft Light',
+    desc: 'Gentle low-intensity projection designed for relaxation. Safe for kids, perfect for sleep.',
+    delay: '160',
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12H3"/><path d="M12 5V3"/><path d="M19 12h2"/><path d="M12 19v2"/><rect x="8" y="8" width="8" height="8" rx="2"/><path d="M9 1v2"/><path d="M15 1v2"/></svg>`,
+    title: 'USB Powered',
+    desc: 'Works with any USB port — laptop, phone charger, power bank. No batteries needed ever.',
+    delay: '240',
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 8v4l3 3"/><path d="M18 2v6h6"/></svg>`,
+    title: 'Flexible Gooseneck Arm',
+    desc: '16cm adjustable arm bends to any angle. Clip to your bed frame, desk, or shelf.',
+    delay: '320',
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`,
+    title: 'Compact & Portable',
+    desc: 'Fits in your pocket. Take it to hotel rooms, sleepovers, or anywhere you want the vibe.',
+    delay: '400',
+  },
+];
+---
+
+<section class="relative py-24 bg-galaxy-deep overflow-hidden">
+  <div class="glow-orb w-[400px] h-[400px] bg-blue-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-animate>
+      <span class="section-label">Features</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4">
+        Everything You <span class="text-gradient">Need & More</span>
+      </h2>
+      <p class="text-galaxy-muted text-lg max-w-xl mx-auto">
+        Engineered for maximum atmosphere, minimum effort.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {features.map((f) => (
+        <div
+          class="glass-card p-8 group hover:border-galaxy-purple/50 transition-all duration-300 hover:-translate-y-1"
+          data-animate
+          style={`--delay: ${f.delay}ms`}
+        >
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-2xl bg-galaxy-purple/20 border border-galaxy-purple/30 flex items-center justify-center mb-5 group-hover:bg-galaxy-purple/30 transition-colors text-galaxy-glow">
+            <div class="w-6 h-6" set:html={f.icon} />
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">{f.title}</h3>
+          <p class="text-galaxy-muted text-sm leading-relaxed">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

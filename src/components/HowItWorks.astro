@@ -1,0 +1,89 @@
+---
+const steps = [
+  {
+    num: '01',
+    emoji: '🪐',
+    title: 'Choose Your Slide',
+    desc: 'Pick from 16 projection slides — moon, Mars, Earth, Saturn, galaxy, aurora, and more. Snap it into the projector head.',
+    delay: '0',
+  },
+  {
+    num: '02',
+    emoji: '🔌',
+    title: 'Plug Into USB',
+    desc: 'Connect to any USB port — your phone charger, laptop, or power bank. No batteries, no wiring, no setup required.',
+    delay: '150',
+  },
+  {
+    num: '03',
+    emoji: '✨',
+    title: 'Project Your Galaxy',
+    desc: 'Aim the flexible arm at your wall or ceiling, adjust the angle, and watch your room transform instantly.',
+    delay: '300',
+  },
+];
+---
+
+<section class="relative py-24 bg-galaxy-void overflow-hidden">
+  <div class="glow-orb w-[350px] h-[350px] bg-purple-glow bottom-0 right-0 opacity-30"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-animate>
+      <span class="section-label">How It Works</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4">
+        Set Up In <span class="text-gradient">Under 10 Seconds</span>
+      </h2>
+      <p class="text-galaxy-muted text-lg max-w-xl mx-auto">
+        No tech skills needed. No instructions to read. Just plug and project.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="relative flex flex-col lg:flex-row gap-8 lg:gap-4 items-center lg:items-stretch">
+      {steps.map((step, i) => (
+        <>
+          <div
+            class="flex-1 glass-card p-8 text-center hover:border-galaxy-purple/40 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group"
+            data-animate
+            style={`--delay: ${step.delay}ms`}
+          >
+            <!-- Step number watermark -->
+            <div class="absolute -top-4 -right-2 text-8xl font-black text-white/[0.04] select-none leading-none group-hover:text-white/[0.06] transition-colors">{step.num}</div>
+
+            <!-- Step number badge -->
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-cta-gradient text-white font-black text-lg mb-5 mx-auto" style="box-shadow: 0 0 20px rgba(124,58,237,0.5);">
+              {step.num.replace('0', '')}
+            </div>
+
+            <div class="text-4xl mb-4">{step.emoji}</div>
+            <h3 class="text-white font-bold text-xl mb-3">{step.title}</h3>
+            <p class="text-galaxy-muted text-sm leading-relaxed">{step.desc}</p>
+          </div>
+
+          <!-- Connector arrow (desktop only) -->
+          {i < steps.length - 1 && (
+            <div class="hidden lg:flex items-center justify-center text-galaxy-purple/60 text-2xl flex-shrink-0 w-8">
+              <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          )}
+          {i < steps.length - 1 && (
+            <div class="lg:hidden flex justify-center text-galaxy-purple/60">
+              <svg viewBox="0 0 24 24" class="w-6 h-6 rotate-90" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          )}
+        </>
+      ))}
+    </div>
+
+    <!-- Bottom note -->
+    <div class="text-center mt-12" data-animate style="--delay: 450ms">
+      <p class="text-galaxy-stardust text-base">
+        That's it. Your room goes from <span class="text-galaxy-muted line-through">ordinary</span> to <span class="text-gradient font-bold">extraordinary</span> in seconds.
+      </p>
+    </div>
+  </div>
+</section>

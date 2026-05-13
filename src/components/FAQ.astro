@@ -1,0 +1,23 @@
+---
+import Accordion from './Accordion.tsx';
+---
+
+<section class="relative py-24 bg-galaxy-deep overflow-hidden">
+  <div class="glow-orb w-[350px] h-[350px] bg-purple-glow -bottom-16 right-0 opacity-25"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14" data-animate>
+      <span class="section-label">FAQ</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4">
+        Got Questions? <span class="text-gradient">We've Got Answers.</span>
+      </h2>
+      <p class="text-galaxy-muted text-lg">
+        Everything you need to know before you order.
+      </p>
+    </div>
+
+    <div data-animate style="--delay: 100ms">
+      <Accordion client:load />
+    </div>
+  </div>
+</section>

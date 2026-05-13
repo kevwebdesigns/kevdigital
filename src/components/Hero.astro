@@ -1,0 +1,150 @@
+---
+interface Props {
+  checkoutUrl: string;
+}
+const { checkoutUrl } = Astro.props;
+---
+
+<section id="hero" class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-galaxy-void stars-bg">
+  <!-- Glow orbs -->
+  <div class="glow-orb w-[500px] h-[500px] bg-purple-glow -top-24 -left-24 opacity-60"></div>
+  <div class="glow-orb w-[400px] h-[400px] bg-blue-glow -bottom-16 -right-16 opacity-50"></div>
+  <div class="glow-orb w-[300px] h-[300px] bg-purple-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pt-28">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+      <!-- Left: Copy -->
+      <div class="text-center lg:text-left order-2 lg:order-1">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-galaxy-purple/20 border border-galaxy-purple/40 rounded-full px-4 py-2 text-sm font-semibold text-galaxy-stardust mb-6">
+          <span class="w-2 h-2 bg-galaxy-glow rounded-full animate-pulse"></span>
+          As Seen on TikTok — Viral Room Aesthetic
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] mb-6">
+          <span class="text-white">Turn Your Room Into</span><br />
+          <span class="text-gradient">Another Universe</span>
+        </h1>
+
+        <!-- Sub -->
+        <p class="text-lg sm:text-xl text-galaxy-stardust/80 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+          Create a breathtaking galaxy atmosphere in seconds with immersive moon and planet projections on your walls and ceiling.
+        </p>
+
+        <!-- Trust bullets -->
+        <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
+          {[
+            { icon: '🔌', text: 'USB Powered' },
+            { icon: '🪐', text: '16 Projection Slides' },
+            { icon: '🌙', text: 'Relaxing Atmosphere' },
+            { icon: '🎵', text: 'Viral TikTok Product' },
+          ].map((b) => (
+            <span class="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 rounded-full px-3 py-1.5 text-sm text-galaxy-stardust">
+              <span>{b.icon}</span> {b.text}
+            </span>
+          ))}
+        </div>
+
+        <!-- CTA -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+          <a href={checkoutUrl} class="btn-primary text-xl py-5 px-10">
+            Get Yours Today
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Social proof micro -->
+        <div class="flex items-center justify-center lg:justify-start gap-3">
+          <!-- Avatars -->
+          <div class="flex -space-x-2">
+            {['#7c3aed','#4f46e5','#a855f7','#6366f1','#8b5cf6'].map((c, i) => (
+              <div class="w-8 h-8 rounded-full border-2 border-galaxy-void flex items-center justify-center text-xs font-bold" style={`background: ${c};`}>{String.fromCharCode(65 + i)}</div>
+            ))}
+          </div>
+          <div>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(() => <span class="text-galaxy-gold text-sm">★</span>)}
+            </div>
+            <p class="text-xs text-galaxy-muted">2,847 happy customers</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Product Visual -->
+      <div class="order-1 lg:order-2 flex items-center justify-center">
+        <div class="relative animate-float">
+          <!-- Outer glow ring -->
+          <div class="absolute inset-0 rounded-full bg-galaxy-purple/20 blur-3xl scale-110 animate-glow-pulse"></div>
+
+          <!-- Product illustration box -->
+          <div class="relative w-80 h-80 sm:w-96 sm:h-96 rounded-3xl overflow-hidden" style="background: radial-gradient(ellipse at 30% 30%, #1a0533 0%, #050510 70%); border: 1px solid rgba(168,85,247,0.3); box-shadow: 0 0 60px rgba(124,58,237,0.5), 0 0 120px rgba(124,58,237,0.2);">
+            <!-- Stars in product box -->
+            <div class="absolute inset-0 stars-bg opacity-80"></div>
+
+            <!-- Projector lamp SVG illustration -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg viewBox="0 0 200 220" class="w-48 h-48 sm:w-56 sm:h-56 drop-shadow-[0_0_20px_rgba(168,85,247,0.8)]" xmlns="http://www.w3.org/2000/svg">
+                <!-- USB plug -->
+                <rect x="62" y="188" width="28" height="14" rx="3" fill="#555" stroke="#444" stroke-width="1"/>
+                <rect x="65" y="192" width="8" height="6" rx="1" fill="#333"/>
+                <rect x="75" y="192" width="8" height="6" rx="1" fill="#333"/>
+                <!-- Flexible arm -->
+                <path d="M76 188 Q74 170 72 155 Q70 140 74 125 Q78 110 82 98" stroke="#444" stroke-width="8" fill="none" stroke-linecap="round"/>
+                <path d="M76 188 Q74 170 72 155 Q70 140 74 125 Q78 110 82 98" stroke="#666" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="3 4"/>
+                <!-- Projector head body -->
+                <ellipse cx="95" cy="88" rx="22" ry="14" fill="#222" stroke="#444" stroke-width="1.5"/>
+                <rect x="73" y="75" width="44" height="26" rx="8" fill="#1a1a1a" stroke="#444" stroke-width="1.5"/>
+                <rect x="73" y="75" width="44" height="26" rx="8" fill="url(#headGrad)"/>
+                <!-- Lens -->
+                <ellipse cx="108" cy="88" rx="10" ry="10" fill="#111" stroke="#555" stroke-width="1.5"/>
+                <ellipse cx="108" cy="88" rx="7" ry="7" fill="#0d0d1a" stroke="#7c3aed" stroke-width="1"/>
+                <ellipse cx="108" cy="88" rx="4" ry="4" fill="#3b0080"/>
+                <ellipse cx="106" cy="86" rx="1.5" ry="1.5" fill="rgba(168,85,247,0.8)"/>
+                <!-- Clip mount -->
+                <rect x="73" y="68" width="16" height="10" rx="3" fill="#333" stroke="#555" stroke-width="1"/>
+                <!-- Projection beam -->
+                <path d="M118 78 L155 45 L165 95 L118 98 Z" fill="url(#beamGrad)" opacity="0.4"/>
+                <!-- Planet projection -->
+                <circle cx="162" cy="70" r="22" fill="url(#planetGrad)" opacity="0.9"/>
+                <circle cx="162" cy="70" r="22" fill="none" stroke="rgba(168,85,247,0.4)" stroke-width="1"/>
+                <!-- Planet surface details -->
+                <ellipse cx="155" cy="65" rx="8" ry="5" fill="rgba(0,0,0,0.2)" opacity="0.5"/>
+                <ellipse cx="170" cy="75" rx="6" ry="4" fill="rgba(255,255,255,0.1)" opacity="0.5"/>
+                <!-- Defs -->
+                <defs>
+                  <linearGradient id="headGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#2a2a2a"/>
+                    <stop offset="100%" stop-color="#111"/>
+                  </linearGradient>
+                  <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="rgba(168,85,247,0.6)"/>
+                    <stop offset="100%" stop-color="rgba(168,85,247,0)"/>
+                  </linearGradient>
+                  <radialGradient id="planetGrad" cx="35%" cy="35%">
+                    <stop offset="0%" stop-color="#c0a0e0"/>
+                    <stop offset="40%" stop-color="#7c5abf"/>
+                    <stop offset="70%" stop-color="#3b0080"/>
+                    <stop offset="100%" stop-color="#1a0040"/>
+                  </radialGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <!-- Floating planet orbs -->
+            <div class="absolute top-6 right-6 w-10 h-10 rounded-full animate-glow-pulse" style="background: radial-gradient(circle at 35% 35%, #7ec8e3, #1a4a6e); box-shadow: 0 0 12px rgba(126,200,227,0.5);"></div>
+            <div class="absolute bottom-8 left-8 w-8 h-8 rounded-full" style="background: radial-gradient(circle at 35% 35%, #c8a96e, #6b4c1e); box-shadow: 0 0 10px rgba(200,169,110,0.4); animation: float 4s ease-in-out infinite;"></div>
+            <div class="absolute top-1/3 left-6 w-6 h-6 rounded-full" style="background: radial-gradient(circle at 35% 35%, #e87070, #8b1a1a); box-shadow: 0 0 8px rgba(232,112,112,0.5); animation: float 5s ease-in-out infinite 1s;"></div>
+          </div>
+
+          <!-- Badge overlay -->
+          <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-galaxy-purple text-white text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap" style="box-shadow: 0 0 20px rgba(124,58,237,0.6);">
+            🌙 Projects on walls & ceiling
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

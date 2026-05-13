@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Solution from '../components/Solution.astro';
+import FeaturesGrid from '../components/FeaturesGrid.astro';
+import WhyPeopleLoveIt from '../components/WhyPeopleLoveIt.astro';
+import SocialProof from '../components/SocialProof.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import ProductShowcase from '../components/ProductShowcase.astro';
+import OfferSection from '../components/OfferSection.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import StickyCartBar from '../components/StickyCartBar.astro';
+
+const CHECKOUT_URL = 'https://h01pxzs96jv6t60q-83876937968.shopifypreview.com/';
+---
+
+<BaseLayout
+  title="Galaxy Moon Projection Lamp — Turn Your Room Into Another Universe"
+  description="Create a relaxing galaxy atmosphere in seconds. USB-powered projector lamp with 16 interchangeable planet slides. Free shipping, 30-day returns."
+>
+  <!-- Section 1: Hero -->
+  <Hero checkoutUrl={CHECKOUT_URL} />
+
+  <!-- Trust bar -->
+  <TrustBar />
+
+  <!-- Section 2: Problem -->
+  <Problem />
+
+  <!-- Gradient divider -->
+  <div class="gradient-divider"></div>
+
+  <!-- Section 3: Solution -->
+  <Solution checkoutUrl={CHECKOUT_URL} />
+
+  <!-- Section 4: Features Grid -->
+  <FeaturesGrid />
+
+  <!-- Section 5: Why People Love It -->
+  <WhyPeopleLoveIt />
+
+  <!-- Section 6: Social Proof -->
+  <SocialProof />
+
+  <!-- Section 7: How It Works -->
+  <HowItWorks />
+
+  <!-- Section 8: Product Showcase -->
+  <ProductShowcase checkoutUrl={CHECKOUT_URL} />
+
+  <!-- Section 9: Offer + Countdown -->
+  <OfferSection checkoutUrl={CHECKOUT_URL} />
+
+  <!-- Section 10: FAQ -->
+  <FAQ />
+
+  <!-- Section 11: Final CTA -->
+  <FinalCTA checkoutUrl={CHECKOUT_URL} />
+
+  <!-- Sticky mobile cart bar -->
+  <StickyCartBar checkoutUrl={CHECKOUT_URL} />
+</BaseLayout>

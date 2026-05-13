@@ -4,151 +4,169 @@ interface Props {
 }
 const { checkoutUrl } = Astro.props;
 
-// Planet colors for visual slide grid (matching AliExpress product images)
 const planetSlides = [
-  { color: '#c8c8c8', name: 'Moon', label: '🌕' },
-  { color: '#8b4513', name: 'Mars', label: '🔴' },
-  { color: '#6a5acd', name: 'Galaxy', label: '🌌' },
-  { color: '#4169e1', name: 'Earth', label: '🌍' },
-  { color: '#daa520', name: 'Jupiter', label: '🪐' },
-  { color: '#87ceeb', name: 'Neptune', label: '💙' },
-  { color: '#ff6347', name: 'Mars 2', label: '🔸' },
-  { color: '#228b22', name: 'Earth 2', label: '🌿' },
-  { color: '#191970', name: 'Saturn', label: '🪐' },
-  { color: '#1a1a1a', name: 'Eclipse', label: '⚫' },
-  { color: '#2c2c54', name: 'Space', label: '✨' },
-  { color: '#0000cd', name: 'Neptune 2', label: '💫' },
-  { color: '#1c1c3c', name: 'Galaxy 2', label: '🌠' },
-  { color: '#006400', name: 'Aurora', label: '🟢' },
-  { color: '#4b0082', name: 'Nebula', label: '💜' },
-  { color: '#2f4f4f', name: 'Deep Space', label: '🌑' },
+  { color: '#d4d0c8,#908880', name: 'Moon', emoji: '🌕' },
+  { color: '#c87040,#6b3018', name: 'Mars', emoji: '🔴' },
+  { color: '#8060c0,#301860', name: 'Galaxy', emoji: '🌌' },
+  { color: '#4890e0,#1830a0', name: 'Earth', emoji: '🌍' },
+  { color: '#d8a030,#806010', name: 'Jupiter', emoji: '🪐' },
+  { color: '#80c8e8,#2060a0', name: 'Neptune', emoji: '💙' },
+  { color: '#e06030,#902010', name: 'Mars 2', emoji: '🔸' },
+  { color: '#208040,#104020', name: 'Earth 2', emoji: '🌿' },
+  { color: '#404090,#101040', name: 'Saturn', emoji: '🪐' },
+  { color: '#1a1a30,#050510', name: 'Eclipse', emoji: '⚫' },
+  { color: '#302060,#100820', name: 'Space', emoji: '✨' },
+  { color: '#1020c0,#050840', name: 'Neptune 2', emoji: '💫' },
+  { color: '#1c2060,#080c30', name: 'Galaxy 2', emoji: '🌠' },
+  { color: '#006840,#002818', name: 'Aurora', emoji: '🟢' },
+  { color: '#500890,#200040', name: 'Nebula', emoji: '💜' },
+  { color: '#304848,#101820', name: 'Deep Space', emoji: '🌑' },
+];
+
+const galleryImages = [
+  {
+    src: 'https://images.unsplash.com/photo-1534796636912-3b19b83433b6?w=800&q=85&auto=format&fit=crop',
+    alt: 'Galaxy projection on bedroom ceiling',
+    label: 'Ceiling Projection Effect',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=85&auto=format&fit=crop',
+    alt: 'Milky way galaxy projection',
+    label: 'Galaxy Slide',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=85&auto=format&fit=crop',
+    alt: 'Purple galaxy nebula projection',
+    label: 'Nebula Projection',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=85&auto=format&fit=crop',
+    alt: 'Star field night sky projection',
+    label: 'Star Field',
+  },
 ];
 ---
 
 <section class="relative py-24 bg-galaxy-deep overflow-hidden" id="product">
-  <div class="glow-orb w-[450px] h-[450px] bg-purple-glow top-0 left-0 opacity-25"></div>
+  <div class="glow-orb w-[450px] h-[450px] bg-purple-glow top-0 left-0 opacity-20"></div>
 
   <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16" data-animate>
+    <div class="text-center mb-14" data-animate>
       <span class="section-label">Product Showcase</span>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4">
         <span class="text-gradient">Galaxy Moon</span> Projection Lamp
       </h2>
+      <p class="text-galaxy-muted text-lg max-w-xl mx-auto">Real projection effects. Real atmosphere. Real results.</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-      <!-- Left: Gallery -->
+      <!-- Left: Image gallery -->
       <div data-animate>
         <!-- Main image -->
-        <div
-          id="main-gallery-img"
-          class="w-full aspect-square rounded-3xl mb-4 flex items-center justify-center relative overflow-hidden"
-          style="background: radial-gradient(ellipse at 30% 20%, #1a0040 0%, #050510 70%); border: 1px solid rgba(168,85,247,0.3); box-shadow: 0 0 40px rgba(124,58,237,0.3);"
-        >
-          <div class="absolute inset-0 stars-bg opacity-60"></div>
-          <!-- Main product illustration -->
-          <div class="relative z-10 text-center p-8">
-            <svg viewBox="0 0 240 260" class="w-56 h-56 mx-auto drop-shadow-[0_0_30px_rgba(168,85,247,0.8)]" xmlns="http://www.w3.org/2000/svg">
-              <rect x="88" y="228" width="32" height="16" rx="4" fill="#555" stroke="#444" stroke-width="1.5"/>
-              <rect x="92" y="232" width="9" height="8" rx="1" fill="#333"/>
-              <rect x="103" y="232" width="9" height="8" rx="1" fill="#333"/>
-              <path d="M104 228 Q101 208 98 190 Q95 172 100 152 Q105 132 110 115" stroke="#555" stroke-width="10" fill="none" stroke-linecap="round"/>
-              <path d="M104 228 Q101 208 98 190 Q95 172 100 152 Q105 132 110 115" stroke="#777" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="4 5"/>
-              <rect x="88" y="96" width="54" height="32" rx="10" fill="#1a1a1a" stroke="#555" stroke-width="2"/>
-              <rect x="88" y="96" width="54" height="32" rx="10" fill="url(#pHeadGrad)"/>
-              <ellipse cx="132" cy="112" rx="13" ry="13" fill="#0d0d0d" stroke="#666" stroke-width="1.5"/>
-              <ellipse cx="132" cy="112" rx="9" ry="9" fill="#050510" stroke="#7c3aed" stroke-width="1.5"/>
-              <ellipse cx="132" cy="112" rx="5" ry="5" fill="#3b0080"/>
-              <ellipse cx="129" cy="109" rx="2" ry="2" fill="rgba(168,85,247,0.9)"/>
-              <rect x="88" y="82" width="20" height="14" rx="4" fill="#2a2a2a" stroke="#666" stroke-width="1.5"/>
-              <path d="M145 100 L190 60 L205 115 L145 128 Z" fill="url(#pBeamGrad)" opacity="0.35"/>
-              <circle cx="198" cy="85" r="26" fill="url(#moonGrad)" opacity="0.95"/>
-              <ellipse cx="190" cy="78" rx="9" ry="6" fill="rgba(0,0,0,0.15)"/>
-              <ellipse cx="208" cy="94" rx="7" ry="5" fill="rgba(255,255,255,0.1)"/>
-              <circle cx="193" cy="90" r="2" fill="rgba(0,0,0,0.2)"/>
-              <defs>
-                <linearGradient id="pHeadGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#333"/>
-                  <stop offset="100%" stop-color="#111"/>
-                </linearGradient>
-                <linearGradient id="pBeamGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="rgba(168,85,247,0.7)"/>
-                  <stop offset="100%" stop-color="rgba(168,85,247,0)"/>
-                </linearGradient>
-                <radialGradient id="moonGrad" cx="35%" cy="35%">
-                  <stop offset="0%" stop-color="#e8e0d0"/>
-                  <stop offset="40%" stop-color="#b0a898"/>
-                  <stop offset="70%" stop-color="#787068"/>
-                  <stop offset="100%" stop-color="#504840"/>
-                </radialGradient>
-              </defs>
-            </svg>
-            <p class="text-galaxy-muted text-xs mt-2">Galaxy Moon Projection Lamp</p>
+        <div class="relative rounded-3xl overflow-hidden aspect-square mb-4 group cursor-pointer" style="border: 1px solid rgba(168,85,247,0.3); box-shadow: 0 0 40px rgba(124,58,237,0.3);" id="main-product-img">
+          <img
+            id="main-img-el"
+            src={galleryImages[0].src}
+            alt={galleryImages[0].alt}
+            class="w-full h-full object-cover transition-all duration-500"
+            loading="lazy"
+          />
+          <div class="absolute inset-0" style="background: linear-gradient(160deg, transparent 60%, rgba(5,5,16,0.8) 100%);"></div>
+
+          <!-- Image label -->
+          <div id="main-img-label" class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold px-4 py-2 rounded-full">
+            {galleryImages[0].label}
           </div>
 
           <!-- 30-day badge -->
-          <div class="absolute top-4 right-4 w-16 h-16 rounded-full bg-galaxy-purple/20 border border-galaxy-purple/40 flex flex-col items-center justify-center text-center">
-            <p class="text-white font-black text-lg leading-none">30</p>
-            <p class="text-galaxy-stardust text-[9px] leading-tight">DAY<br/>GUARANTEE</p>
+          <div class="absolute top-4 right-4 w-16 h-16 rounded-full flex flex-col items-center justify-center text-center backdrop-blur-sm" style="background: rgba(124,58,237,0.6); border: 1px solid rgba(168,85,247,0.5); box-shadow: 0 0 16px rgba(124,58,237,0.5);">
+            <p class="text-white font-black text-xl leading-none">30</p>
+            <p class="text-galaxy-stardust text-[9px] leading-tight font-semibold">DAY<br/>GUARANTEE</p>
           </div>
         </div>
 
-        <!-- Planet slides grid -->
-        <div class="mb-4">
-          <p class="text-galaxy-muted text-xs mb-3 text-center">16 Interchangeable Projection Slides</p>
+        <!-- Thumbnail gallery -->
+        <div class="grid grid-cols-4 gap-3 mb-5">
+          {galleryImages.map((img, i) => (
+            <button
+              class="thumbnail-btn rounded-2xl overflow-hidden aspect-square border-2 transition-all duration-200 hover:scale-105"
+              style={`border-color: ${i === 0 ? 'rgba(168,85,247,0.8)' : 'rgba(255,255,255,0.1)'};`}
+              data-src={img.src}
+              data-label={img.label}
+              data-idx={i}
+            >
+              <img src={img.src} alt={img.alt} class="w-full h-full object-cover" loading="lazy" />
+            </button>
+          ))}
+        </div>
+
+        <!-- Planet slides visual grid -->
+        <div class="glass-card p-4">
+          <p class="text-galaxy-muted text-xs mb-3 text-center font-semibold uppercase tracking-wider">16 Interchangeable Projection Slides Included</p>
           <div class="planet-grid">
             {planetSlides.map((p) => (
               <div
-                class="aspect-square rounded-xl cursor-pointer border border-white/10 hover:border-galaxy-glow/60 transition-all hover:scale-105 flex items-center justify-center text-lg"
-                style={`background: radial-gradient(circle at 35% 35%, ${p.color}aa, ${p.color}44);`}
+                class="aspect-square rounded-lg border border-white/10 hover:border-galaxy-glow/60 transition-all hover:scale-105 cursor-pointer flex items-center justify-center text-base"
+                style={`background: radial-gradient(circle at 35% 35%, ${p.color.split(',')[0]}cc, ${p.color.split(',')[1]}88);`}
                 title={p.name}
               >
-                {p.label}
+                {p.emoji}
               </div>
             ))}
           </div>
+          <p class="text-center text-galaxy-muted text-xs mt-3">Moon · Mars · Earth · Jupiter · Saturn · Neptune · Galaxy · Aurora + more</p>
         </div>
       </div>
 
-      <!-- Right: Product details -->
+      <!-- Right: Product details (sticky on desktop) -->
       <div data-animate style="--delay: 100ms" class="lg:sticky lg:top-8">
         <!-- Rating -->
         <div class="flex items-center gap-2 mb-3">
-          <div class="flex gap-0.5">
-            {[1,2,3,4,5].map(() => <span class="text-galaxy-gold">★</span>)}
-          </div>
-          <span class="text-galaxy-stardust text-sm font-semibold">Rated 4.9/5</span>
-          <span class="text-galaxy-muted text-sm">by 1,402 people</span>
+          <div class="flex gap-0.5">{[1,2,3,4,5].map(() => <span class="text-galaxy-gold text-lg">★</span>)}</div>
+          <span class="text-white font-bold">4.9/5</span>
+          <span class="text-galaxy-muted text-sm">(1,402 reviews)</span>
         </div>
 
-        <!-- Product name -->
         <h3 class="text-white font-black text-2xl sm:text-3xl mb-2 leading-tight">
           Galaxy Moon Projection Lamp
         </h3>
-
-        <!-- Tag line -->
-        <div class="inline-flex items-center gap-2 bg-galaxy-purple/20 border border-galaxy-purple/30 rounded-full px-3 py-1 text-sm text-galaxy-stardust mb-5">
-          <span class="w-2 h-2 bg-galaxy-glow rounded-full"></span>
-          Unwind in soft light
-        </div>
-        <p class="text-galaxy-muted mb-5">Drift into a restful sleep with gentle projections on your ceiling.</p>
-
-        <!-- Price -->
-        <div class="flex items-center gap-3 mb-5">
-          <span class="price-sale">$24.95 USD</span>
-          <span class="price-original">$31.19 USD</span>
-          <span class="price-badge">SAVE 20%</span>
+        <div class="inline-flex items-center gap-2 bg-galaxy-purple/20 border border-galaxy-purple/30 rounded-full px-3 py-1 text-sm text-galaxy-stardust mb-4">
+          <span class="w-2 h-2 bg-galaxy-glow rounded-full animate-pulse"></span>
+          Unwind in soft light · Viral bedroom essential
         </div>
 
-        <!-- Benefits list -->
-        <ul class="space-y-2.5 mb-7">
+        <p class="text-galaxy-muted text-sm mb-5">Drift into a restful sleep with gentle projections on your ceiling. Projects realistic moons, planets & galaxies onto any wall or ceiling surface.</p>
+
+        <!-- Price block -->
+        <div class="glass-card p-5 mb-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-4xl font-black text-white">$24.95</span>
+            <div>
+              <span class="text-galaxy-muted line-through text-lg block">$31.19</span>
+              <span class="price-badge">SAVE 20%</span>
+            </div>
+          </div>
+          <!-- Stock indicator -->
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse-dot"></span>
+            <span class="text-red-400 text-sm font-semibold">Only 23 units left in stock!</span>
+          </div>
+          <!-- Mini stock bar -->
+          <div class="w-full bg-white/10 rounded-full h-1.5 mb-1">
+            <div class="h-1.5 rounded-full" style="width: 82%; background: linear-gradient(90deg, #7c3aed, #ef4444);"></div>
+          </div>
+          <p class="text-galaxy-muted text-xs">82% sold out — selling fast</p>
+        </div>
+
+        <!-- Benefits -->
+        <ul class="space-y-2.5 mb-6">
           {[
-            'Soft light calms your bedroom space',
-            'Simple ritual helps you slow down',
-            'Peaceful patterns encourage a quiet mind',
-            '16 projection slides included',
-            'Max projection range 280cm (110 inches)',
+            'Projects moons, planets & galaxies on walls & ceiling',
+            'Max projection range 280cm · Coverage area 12m²',
+            '16 interchangeable slides — swap in seconds',
+            'USB powered · Works with any charger or power bank',
+            'Flexible 16cm gooseneck arm adjusts to any angle',
           ].map((b) => (
             <li class="flex items-center gap-2.5 text-galaxy-stardust text-sm">
               <svg class="w-4 h-4 text-galaxy-glow flex-shrink-0" viewBox="0 0 16 16" fill="none">
@@ -161,28 +179,31 @@ const planetSlides = [
         </ul>
 
         <!-- CTA -->
-        <a href={checkoutUrl} class="btn-primary w-full text-center text-xl py-5 mb-4">
+        <a href={checkoutUrl} class="btn-primary w-full text-center text-xl py-5 mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          ADD TO CART
+          ADD TO CART — $24.95
         </a>
+
+        <!-- Secondary CTA text -->
+        <p class="text-center text-galaxy-muted text-xs mb-5">🔒 Secure checkout · Ships in 24hrs · 30-day money back</p>
 
         <!-- Payment methods -->
         <div class="flex items-center justify-center gap-2 flex-wrap mb-5">
-          {['VISA', 'MC', 'PAYPAL', 'AMEX', 'APPLE PAY'].map((p) => (
-            <span class="bg-white/10 border border-white/20 rounded px-2 py-1 text-white text-[10px] font-bold tracking-wide">{p}</span>
+          {['VISA', 'MASTERCARD', 'PAYPAL', 'AMEX', 'APPLE PAY', 'SHOP PAY'].map((p) => (
+            <span class="bg-white/10 border border-white/20 rounded px-2 py-1 text-white text-[9px] font-bold tracking-wide">{p}</span>
           ))}
         </div>
 
         <!-- Trust badges -->
         <div class="grid grid-cols-3 gap-3">
           {[
-            { icon: '🔒', title: 'Secure', sub: 'Checkout' },
-            { icon: '📦', title: 'Free', sub: 'Shipping' },
-            { icon: '↩️', title: '30-Day', sub: 'Returns' },
+            { icon: '💰', title: '30-Day Money Back', sub: 'No questions asked' },
+            { icon: '🚚', title: 'Free Shipping', sub: 'Worldwide delivery' },
+            { icon: '🔒', title: 'Secure Payment', sub: '256-bit SSL' },
           ].map((b) => (
             <div class="glass-card p-3 text-center">
-              <p class="text-xl mb-1">{b.icon}</p>
-              <p class="text-white text-xs font-bold">{b.title}</p>
+              <p class="text-2xl mb-1">{b.icon}</p>
+              <p class="text-white text-xs font-bold leading-tight">{b.title}</p>
               <p class="text-galaxy-muted text-[10px]">{b.sub}</p>
             </div>
           ))}
@@ -192,3 +213,20 @@ const planetSlides = [
     </div>
   </div>
 </section>
+
+<script>
+  const thumbs = document.querySelectorAll<HTMLButtonElement>('.thumbnail-btn');
+  const mainImg = document.getElementById('main-img-el') as HTMLImageElement | null;
+  const mainLabel = document.getElementById('main-img-label') as HTMLElement | null;
+
+  thumbs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const src = btn.dataset.src;
+      const label = btn.dataset.label;
+      if (mainImg && src) mainImg.src = src;
+      if (mainLabel && label) mainLabel.textContent = label;
+      thumbs.forEach((b) => b.style.setProperty('border-color', 'rgba(255,255,255,0.1)'));
+      btn.style.setProperty('border-color', 'rgba(168,85,247,0.8)');
+    });
+  });
+</script>

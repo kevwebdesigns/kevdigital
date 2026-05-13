@@ -8,24 +8,34 @@ const { checkoutUrl } = Astro.props;
 <div
   id="sticky-cart"
   class="fixed bottom-0 inset-x-0 z-50 md:hidden"
-  style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(5,5,16,0.92); border-top: 1px solid rgba(124,58,237,0.3); box-shadow: 0 -4px 24px rgba(124,58,237,0.2);"
+  style="backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: rgba(5,5,16,0.95); border-top: 1px solid rgba(124,58,237,0.4); box-shadow: 0 -4px 30px rgba(124,58,237,0.25);"
 >
+  <!-- Urgency strip above bar -->
+  <div class="text-center py-1 text-xs font-semibold text-red-400 border-b border-red-500/20" style="background: rgba(239,68,68,0.08);">
+    ⚡ Only 23 left · 20% off expires soon
+  </div>
+
   <div class="flex items-center gap-3 px-4 py-3">
-    <!-- Mini product info -->
+    <!-- Mini product -->
+    <div class="w-10 h-10 rounded-xl flex-shrink-0 overflow-hidden" style="background: radial-gradient(circle, #1a0533, #050510); border: 1px solid rgba(168,85,247,0.4);">
+      <div class="w-full h-full flex items-center justify-center text-lg">🌙</div>
+    </div>
+
+    <!-- Info -->
     <div class="flex-1 min-w-0">
       <p class="text-white font-bold text-sm leading-tight truncate">Galaxy Projection Lamp</p>
       <div class="flex items-center gap-2 mt-0.5">
         <span class="text-white font-black text-base">$24.95</span>
         <span class="text-galaxy-muted text-xs line-through">$31.19</span>
-        <span class="text-green-400 text-xs font-semibold">-20%</span>
+        <span class="text-green-400 text-xs font-bold">-20%</span>
       </div>
     </div>
 
-    <!-- CTA button -->
+    <!-- CTA -->
     <a
       href={checkoutUrl}
-      class="flex-shrink-0 bg-cta-gradient text-white font-bold text-sm py-3 px-6 rounded-full whitespace-nowrap"
-      style="box-shadow: 0 0 20px rgba(124,58,237,0.5);"
+      class="flex-shrink-0 text-white font-black text-sm py-3 px-5 rounded-full whitespace-nowrap"
+      style="background: linear-gradient(135deg, #7c3aed, #4f46e5); box-shadow: 0 0 20px rgba(124,58,237,0.6);"
     >
       ADD TO CART 🛒
     </a>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TrustBar from '../components/TrustBar.astro';
+import AsSeenOn from '../components/AsSeenOn.astro';
 import Hero from '../components/Hero.astro';
 import Problem from '../components/Problem.astro';
 import Solution from '../components/Solution.astro';
@@ -19,45 +20,47 @@ const CHECKOUT_URL = 'https://h01pxzs96jv6t60q-83876937968.shopifypreview.com/';
 
 <BaseLayout
   title="Galaxy Moon Projection Lamp — Turn Your Room Into Another Universe"
-  description="Create a relaxing galaxy atmosphere in seconds. USB-powered projector lamp with 16 interchangeable planet slides. Free shipping, 30-day returns."
+  description="Create a relaxing galaxy atmosphere in seconds. USB-powered projector lamp with 16 interchangeable planet slides. 20% off today only. Free shipping, 30-day returns."
 >
-  <!-- Section 1: Hero -->
+  <!-- Section 1: Hero — cinematic galaxy background, price shown, urgency -->
   <Hero checkoutUrl={CHECKOUT_URL} />
 
-  <!-- Trust bar -->
+  <!-- Trust bar — scrolling marquee -->
   <TrustBar />
 
-  <!-- Section 2: Problem -->
+  <!-- As Seen On — viral credibility bar -->
+  <AsSeenOn />
+
+  <!-- Section 2: Problem — pain points -->
   <Problem />
 
-  <!-- Gradient divider -->
   <div class="gradient-divider"></div>
 
-  <!-- Section 3: Solution -->
+  <!-- Section 3: Solution — lifestyle imagery, before/after -->
   <Solution checkoutUrl={CHECKOUT_URL} />
 
-  <!-- Section 4: Features Grid -->
+  <!-- Section 4: Features Grid — 6 icon feature cards -->
   <FeaturesGrid />
 
-  <!-- Section 5: Why People Love It -->
+  <!-- Section 5: Why People Love It — emotional benefits -->
   <WhyPeopleLoveIt />
 
-  <!-- Section 6: Social Proof -->
+  <!-- Section 6: Social Proof — 6 reviews + rating breakdown -->
   <SocialProof />
 
-  <!-- Section 7: How It Works -->
+  <!-- Section 7: How It Works — 3-step process -->
   <HowItWorks />
 
-  <!-- Section 8: Product Showcase -->
+  <!-- Section 8: Product Showcase — gallery, planet grid, buy section -->
   <ProductShowcase checkoutUrl={CHECKOUT_URL} />
 
-  <!-- Section 9: Offer + Countdown -->
+  <!-- Section 9: Offer + Countdown — high urgency -->
   <OfferSection checkoutUrl={CHECKOUT_URL} />
 
-  <!-- Section 10: FAQ -->
+  <!-- Section 10: FAQ — accordion -->
   <FAQ />
 
-  <!-- Section 11: Final CTA -->
+  <!-- Section 11: Final CTA — galaxy bg, emotional close -->
   <FinalCTA checkoutUrl={CHECKOUT_URL} />
 
   <!-- Sticky mobile cart bar -->

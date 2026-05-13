@@ -4,45 +4,32 @@ interface Props {
 }
 const { checkoutUrl } = Astro.props;
 
-const planetSlides = [
-  { color: '#d4d0c8,#908880', name: 'Moon', emoji: '🌕' },
-  { color: '#c87040,#6b3018', name: 'Mars', emoji: '🔴' },
-  { color: '#8060c0,#301860', name: 'Galaxy', emoji: '🌌' },
-  { color: '#4890e0,#1830a0', name: 'Earth', emoji: '🌍' },
-  { color: '#d8a030,#806010', name: 'Jupiter', emoji: '🪐' },
-  { color: '#80c8e8,#2060a0', name: 'Neptune', emoji: '💙' },
-  { color: '#e06030,#902010', name: 'Mars 2', emoji: '🔸' },
-  { color: '#208040,#104020', name: 'Earth 2', emoji: '🌿' },
-  { color: '#404090,#101040', name: 'Saturn', emoji: '🪐' },
-  { color: '#1a1a30,#050510', name: 'Eclipse', emoji: '⚫' },
-  { color: '#302060,#100820', name: 'Space', emoji: '✨' },
-  { color: '#1020c0,#050840', name: 'Neptune 2', emoji: '💫' },
-  { color: '#1c2060,#080c30', name: 'Galaxy 2', emoji: '🌠' },
-  { color: '#006840,#002818', name: 'Aurora', emoji: '🟢' },
-  { color: '#500890,#200040', name: 'Nebula', emoji: '💜' },
-  { color: '#304848,#101820', name: 'Deep Space', emoji: '🌑' },
-];
-
+// Gallery uses actual product/lifestyle images
+// SWAP THESE src values with the real AliExpress CDN URLs when the user provides them
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1534796636912-3b19b83433b6?w=800&q=85&auto=format&fit=crop',
-    alt: 'Galaxy projection on bedroom ceiling',
-    label: 'Ceiling Projection Effect',
+    src: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=900&q=90&auto=format&fit=crop',
+    alt: 'Galaxy Moon Projection Lamp projecting onto ceiling',
+    label: 'Moon Projection',
+    // → Replace with AliExpress image: product + 16 slides (image 2/6)
   },
   {
-    src: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=85&auto=format&fit=crop',
-    alt: 'Milky way galaxy projection',
-    label: 'Galaxy Slide',
+    src: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?w=900&q=90&auto=format&fit=crop&crop=center',
+    alt: 'Person sleeping peacefully under galaxy projection',
+    label: 'Soft Light Eye Care',
+    // → Replace with AliExpress lifestyle image: woman sleeping (image 3/6)
   },
   {
-    src: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=85&auto=format&fit=crop',
-    alt: 'Purple galaxy nebula projection',
-    label: 'Nebula Projection',
+    src: 'https://images.unsplash.com/photo-1534796636912-3b19b83433b6?w=900&q=90&auto=format&fit=crop',
+    alt: 'Romantic moon projection atmosphere',
+    label: 'Romantic Atmosphere',
+    // → Replace with AliExpress romantic image: woman in black dress against moon (image 5/6)
   },
   {
-    src: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=85&auto=format&fit=crop',
-    alt: 'Star field night sky projection',
-    label: 'Star Field',
+    src: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=900&q=90&auto=format&fit=crop',
+    alt: 'Galaxy projection fills the entire ceiling and walls',
+    label: 'Ceiling Coverage',
+    // → Replace with AliExpress dimensions image (image 6/6)
   },
 ];
 ---
@@ -64,7 +51,7 @@ const galleryImages = [
       <!-- Left: Image gallery -->
       <div data-animate>
         <!-- Main image -->
-        <div class="relative rounded-3xl overflow-hidden aspect-square mb-4 group cursor-pointer" style="border: 1px solid rgba(168,85,247,0.3); box-shadow: 0 0 40px rgba(124,58,237,0.3);" id="main-product-img">
+        <div class="relative rounded-3xl overflow-hidden aspect-square mb-4" style="border: 1px solid rgba(168,85,247,0.3); box-shadow: 0 0 40px rgba(124,58,237,0.3);">
           <img
             id="main-img-el"
             src={galleryImages[0].src}
@@ -72,54 +59,36 @@ const galleryImages = [
             class="w-full h-full object-cover transition-all duration-500"
             loading="lazy"
           />
-          <div class="absolute inset-0" style="background: linear-gradient(160deg, transparent 60%, rgba(5,5,16,0.8) 100%);"></div>
+          <div class="absolute inset-0" style="background: linear-gradient(160deg, transparent 60%, rgba(5,5,16,0.7) 100%);"></div>
 
-          <!-- Image label -->
           <div id="main-img-label" class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold px-4 py-2 rounded-full">
             {galleryImages[0].label}
           </div>
 
           <!-- 30-day badge -->
-          <div class="absolute top-4 right-4 w-16 h-16 rounded-full flex flex-col items-center justify-center text-center backdrop-blur-sm" style="background: rgba(124,58,237,0.6); border: 1px solid rgba(168,85,247,0.5); box-shadow: 0 0 16px rgba(124,58,237,0.5);">
+          <div class="absolute top-4 right-4 w-16 h-16 rounded-full flex flex-col items-center justify-center text-center backdrop-blur-sm" style="background: rgba(124,58,237,0.65); border: 1px solid rgba(168,85,247,0.5); box-shadow: 0 0 16px rgba(124,58,237,0.5);">
             <p class="text-white font-black text-xl leading-none">30</p>
             <p class="text-galaxy-stardust text-[9px] leading-tight font-semibold">DAY<br/>GUARANTEE</p>
           </div>
         </div>
 
-        <!-- Thumbnail gallery -->
-        <div class="grid grid-cols-4 gap-3 mb-5">
+        <!-- Thumbnail gallery — 4 product images -->
+        <div class="grid grid-cols-4 gap-3">
           {galleryImages.map((img, i) => (
             <button
               class="thumbnail-btn rounded-2xl overflow-hidden aspect-square border-2 transition-all duration-200 hover:scale-105"
               style={`border-color: ${i === 0 ? 'rgba(168,85,247,0.8)' : 'rgba(255,255,255,0.1)'};`}
               data-src={img.src}
               data-label={img.label}
-              data-idx={i}
+              data-idx={String(i)}
             >
               <img src={img.src} alt={img.alt} class="w-full h-full object-cover" loading="lazy" />
             </button>
           ))}
         </div>
-
-        <!-- Planet slides visual grid -->
-        <div class="glass-card p-4">
-          <p class="text-galaxy-muted text-xs mb-3 text-center font-semibold uppercase tracking-wider">16 Interchangeable Projection Slides Included</p>
-          <div class="planet-grid">
-            {planetSlides.map((p) => (
-              <div
-                class="aspect-square rounded-lg border border-white/10 hover:border-galaxy-glow/60 transition-all hover:scale-105 cursor-pointer flex items-center justify-center text-base"
-                style={`background: radial-gradient(circle at 35% 35%, ${p.color.split(',')[0]}cc, ${p.color.split(',')[1]}88);`}
-                title={p.name}
-              >
-                {p.emoji}
-              </div>
-            ))}
-          </div>
-          <p class="text-center text-galaxy-muted text-xs mt-3">Moon · Mars · Earth · Jupiter · Saturn · Neptune · Galaxy · Aurora + more</p>
-        </div>
       </div>
 
-      <!-- Right: Product details (sticky on desktop) -->
+      <!-- Right: Product details -->
       <div data-animate style="--delay: 100ms" class="lg:sticky lg:top-8">
         <!-- Rating -->
         <div class="flex items-center gap-2 mb-3">
@@ -147,19 +116,17 @@ const galleryImages = [
               <span class="price-badge">SAVE 20%</span>
             </div>
           </div>
-          <!-- Stock indicator -->
           <div class="flex items-center gap-2 mb-3">
             <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse-dot"></span>
             <span class="text-red-400 text-sm font-semibold">Only 23 units left in stock!</span>
           </div>
-          <!-- Mini stock bar -->
           <div class="w-full bg-white/10 rounded-full h-1.5 mb-1">
             <div class="h-1.5 rounded-full" style="width: 82%; background: linear-gradient(90deg, #7c3aed, #ef4444);"></div>
           </div>
           <p class="text-galaxy-muted text-xs">82% sold out — selling fast</p>
         </div>
 
-        <!-- Benefits -->
+        <!-- Benefits list -->
         <ul class="space-y-2.5 mb-6">
           {[
             'Projects moons, planets & galaxies on walls & ceiling',
@@ -184,7 +151,6 @@ const galleryImages = [
           ADD TO CART — $24.95
         </a>
 
-        <!-- Secondary CTA text -->
         <p class="text-center text-galaxy-muted text-xs mb-5">🔒 Secure checkout · Ships in 24hrs · 30-day money back</p>
 
         <!-- Payment methods -->

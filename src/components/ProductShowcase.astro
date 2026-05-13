@@ -4,32 +4,34 @@ interface Props {
 }
 const { checkoutUrl } = Astro.props;
 
-// Gallery uses actual product/lifestyle images
-// SWAP THESE src values with the real AliExpress CDN URLs when the user provides them
+// AliExpress CDN product/lifestyle images (provided by user)
+const ALI = (hash: string) => `https://ae-pic-a1.aliexpress-media.com/kf/${hash}.jpg_960x960q75.jpg_.avif`;
+
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=900&q=90&auto=format&fit=crop',
-    alt: 'Galaxy Moon Projection Lamp projecting onto ceiling',
-    label: 'Moon Projection',
-    // → Replace with AliExpress image: product + 16 slides (image 2/6)
+    src: ALI('Sb74ffedf694a4d719052e2f7da4a06c63'),
+    alt: 'Galaxy Moon Projection Lamp with 16 projection slides',
+    label: 'Product + 16 Slides',
   },
   {
-    src: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?w=900&q=90&auto=format&fit=crop&crop=center',
-    alt: 'Person sleeping peacefully under galaxy projection',
+    src: ALI('Sfaa2447c0eaa4ee4a82f4d6215aff09dI'),
+    alt: 'Soft light eye care - immersive bedtime experience',
     label: 'Soft Light Eye Care',
-    // → Replace with AliExpress lifestyle image: woman sleeping (image 3/6)
   },
   {
-    src: 'https://images.unsplash.com/photo-1534796636912-3b19b83433b6?w=900&q=90&auto=format&fit=crop',
+    src: ALI('S49e23bfe83aa48f383800c886057c270g'),
     alt: 'Romantic moon projection atmosphere',
     label: 'Romantic Atmosphere',
-    // → Replace with AliExpress romantic image: woman in black dress against moon (image 5/6)
   },
   {
-    src: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=900&q=90&auto=format&fit=crop',
-    alt: 'Galaxy projection fills the entire ceiling and walls',
-    label: 'Ceiling Coverage',
-    // → Replace with AliExpress dimensions image (image 6/6)
+    src: ALI('S4e1c7531eb5e4053b556425b26d77805k'),
+    alt: 'Galaxy Moon Projection Lamp product detail',
+    label: 'Product Detail',
+  },
+  {
+    src: ALI('Sac3fadaad0064c499597bfbee8f641e6n'),
+    alt: 'Galaxy Projection Lamp dimensions and specifications',
+    label: 'Dimensions & Specs',
   },
 ];
 ---
@@ -58,6 +60,7 @@ const galleryImages = [
             alt={galleryImages[0].alt}
             class="w-full h-full object-cover transition-all duration-500"
             loading="lazy"
+            referrerpolicy="no-referrer"
           />
           <div class="absolute inset-0" style="background: linear-gradient(160deg, transparent 60%, rgba(5,5,16,0.7) 100%);"></div>
 
@@ -72,17 +75,17 @@ const galleryImages = [
           </div>
         </div>
 
-        <!-- Thumbnail gallery — 4 product images -->
-        <div class="grid grid-cols-4 gap-3">
+        <!-- Thumbnail gallery — 5 product images -->
+        <div class="grid grid-cols-5 gap-2">
           {galleryImages.map((img, i) => (
             <button
-              class="thumbnail-btn rounded-2xl overflow-hidden aspect-square border-2 transition-all duration-200 hover:scale-105"
+              class="thumbnail-btn rounded-xl overflow-hidden aspect-square border-2 transition-all duration-200 hover:scale-105"
               style={`border-color: ${i === 0 ? 'rgba(168,85,247,0.8)' : 'rgba(255,255,255,0.1)'};`}
               data-src={img.src}
               data-label={img.label}
               data-idx={String(i)}
             >
-              <img src={img.src} alt={img.alt} class="w-full h-full object-cover" loading="lazy" />
+              <img src={img.src} alt={img.alt} class="w-full h-full object-cover" loading="lazy" referrerpolicy="no-referrer" />
             </button>
           ))}
         </div>

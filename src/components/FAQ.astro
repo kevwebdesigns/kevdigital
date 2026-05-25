@@ -2,22 +2,53 @@
 import Accordion from './Accordion.tsx';
 ---
 
-<section class="relative py-24 bg-galaxy-deep overflow-hidden">
-  <div class="glow-orb w-[350px] h-[350px] bg-purple-glow -bottom-16 right-0 opacity-25"></div>
+<section class="relative py-24 overflow-hidden">
+  <div class="glow-orb w-[300px] h-[300px] bg-teal-glow top-0 left-1/2 -translate-x-1/2 opacity-15 animate-glow-pulse"></div>
 
   <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
     <div class="text-center mb-14" data-animate>
       <span class="section-label">FAQ</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4">
-        Got Questions? <span class="text-gradient">We've Got Answers.</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-2 mb-4 leading-tight">
+        Questions? <span class="text-gradient-teal">We've Got Answers.</span>
       </h2>
-      <p class="text-galaxy-muted text-lg">
-        Everything you need to know before you order.
+      <p class="text-kev-text/75 text-lg">
+        Everything you need to know before you start.
       </p>
     </div>
 
     <div data-animate style="--delay: 100ms">
       <Accordion client:load />
+    </div>
+
+    <!-- Still have questions -->
+    <div class="mt-12 text-center" data-animate style="--delay: 200ms">
+      <p class="text-kev-muted text-sm mb-4">Still have questions?</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a
+          href="tel:+17868004865"
+          class="btn-outline text-sm py-3 px-7 rounded-full inline-flex"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Call (786) 800-4865
+        </a>
+        <a
+          href="mailto:kevwebdesigns1@gmail.com"
+          class="btn-outline text-sm py-3 px-7 rounded-full inline-flex"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Email Us
+        </a>
+        <a href="#audit" class="btn-orange text-sm py-3 px-7 rounded-full inline-flex">
+          Get Free Audit
+        </a>
+      </div>
     </div>
   </div>
 </section>

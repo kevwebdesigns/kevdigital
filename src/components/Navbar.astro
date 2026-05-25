@@ -1,0 +1,102 @@
+---
+const navLinks = [
+  { href: '#services', label: 'Services' },
+  { href: '#portfolio', label: 'Portfolio' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#audit', label: 'Contact' },
+];
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  style="background: rgba(5,13,24,0.6); backdrop-filter: blur(16px);"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-18">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5 group flex-shrink-0">
+        <img
+          src="/logo.svg"
+          alt="KevDigital"
+          class="w-9 h-9 transition-transform duration-300 group-hover:scale-105"
+        />
+        <div class="leading-none">
+          <span
+            class="block font-black text-lg text-white"
+            style="font-family: 'Plus Jakarta Sans', sans-serif;"
+          >
+            Kev<span class="text-gradient-teal">Digital</span>
+          </span>
+          <span class="block text-[9px] text-kev-muted tracking-widest uppercase">Local Miami Web Solutions</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-kev-text hover:text-white text-sm font-medium transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a
+          href="tel:+17868004865"
+          class="flex items-center gap-1.5 text-kev-teal text-sm font-semibold hover:text-kev-tealLight transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          (786) 800-4865
+        </a>
+        <a href="#audit" class="btn-orange text-sm py-2.5 px-6 rounded-full">
+          Free Audit
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="menu-btn"
+        class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl border border-kev-border text-kev-text hover:text-white transition-colors"
+        aria-label="Toggle menu"
+      >
+        <span class="text-lg leading-none">☰</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden border-t border-kev-border overflow-hidden" style="background: rgba(5,13,24,0.98);">
+    <div class="px-4 py-4 space-y-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="flex items-center px-4 py-3 rounded-xl text-kev-text hover:text-white hover:bg-kev-card transition-all duration-200 text-sm font-medium"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="pt-3 space-y-2">
+        <a
+          href="tel:+17868004865"
+          class="flex items-center justify-center gap-2 btn-outline w-full text-sm py-3 rounded-full"
+        >
+          (786) 800-4865
+        </a>
+        <a href="#audit" class="flex items-center justify-center gap-2 btn-orange w-full text-sm py-3 rounded-full">
+          Get Free Website Audit
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

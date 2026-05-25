@@ -2,88 +2,135 @@
 const steps = [
   {
     num: '01',
-    emoji: '🪐',
-    title: 'Choose Your Slide',
-    desc: 'Pick from 16 projection slides — moon, Mars, Earth, Saturn, galaxy, aurora, and more. Snap it into the projector head.',
+    icon: '💬',
+    title: 'Tell Us About Your Business',
+    desc: 'Fill out a quick 5-minute form or jump on a free call with Kev. We learn about your goals, your customers, and what makes you stand out.',
+    detail: 'No tech knowledge needed. Just tell us what you do.',
     delay: '0',
   },
   {
     num: '02',
-    emoji: '🔌',
-    title: 'Plug Into USB',
-    desc: 'Connect to any USB port — your phone charger, laptop, or power bank. No batteries, no wiring, no setup required.',
-    delay: '150',
+    icon: '🎨',
+    title: 'We Design & Build Your Site',
+    desc: 'We design and build your custom, professional website in 7 days. You review, request changes, we revise until you love it.',
+    detail: 'Unlimited revisions until it\'s perfect.',
+    delay: '120',
   },
   {
     num: '03',
-    emoji: '✨',
-    title: 'Project Your Galaxy',
-    desc: 'Aim the flexible arm at your wall or ceiling, adjust the angle, and watch your room transform instantly.',
-    delay: '300',
+    icon: '🚀',
+    title: 'Go Live & Get Customers',
+    desc: 'We launch your site, set up your Google presence, and hand you the keys. Then we stay on as your monthly support team for just $39/mo.',
+    detail: 'We host it, maintain it, update it.',
+    delay: '240',
   },
 ];
 ---
 
-<section class="relative py-24 bg-galaxy-void overflow-hidden">
-  <div class="glow-orb w-[350px] h-[350px] bg-purple-glow bottom-0 right-0 opacity-30"></div>
+<section class="relative py-24 overflow-hidden">
+  <div class="glow-orb w-[400px] h-[400px] bg-teal-glow bottom-0 left-0 opacity-20 animate-glow-pulse" style="animation-delay: 1s;"></div>
 
-  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16" data-animate>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-14" data-animate>
       <span class="section-label">How It Works</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4">
-        Set Up In <span class="text-gradient">Under 10 Seconds</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-2 mb-4 leading-tight">
+        From Zero to <span class="text-gradient-teal">Live Website</span><br />
+        in 3 Simple Steps
       </h2>
-      <p class="text-galaxy-muted text-lg max-w-xl mx-auto">
-        No tech skills needed. No instructions to read. Just plug and project.
+      <p class="text-kev-text/75 text-lg max-w-xl mx-auto">
+        No tech headaches. No back-and-forth for months.
+        Just a great website — done fast.
       </p>
     </div>
 
     <!-- Steps -->
-    <div class="relative flex flex-col lg:flex-row gap-8 lg:gap-4 items-center lg:items-stretch">
-      {steps.map((step, i) => (
-        <>
+    <div class="relative">
+      <!-- Connector line (desktop) -->
+      <div
+        class="hidden lg:block absolute top-1/4 left-0 right-0 h-[2px] pointer-events-none"
+        style="background: linear-gradient(90deg, transparent 5%, rgba(0,194,203,0.2) 30%, rgba(0,194,203,0.2) 70%, transparent 95%); top: 52px;"
+      ></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        {steps.map((step, i) => (
           <div
-            class="flex-1 glass-card p-8 text-center hover:border-galaxy-purple/40 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group"
+            class="relative glass-card p-8 text-center lg:text-left group"
             data-animate
             style={`--delay: ${step.delay}ms`}
           >
             <!-- Step number watermark -->
-            <div class="absolute -top-4 -right-2 text-8xl font-black text-white/[0.04] select-none leading-none group-hover:text-white/[0.06] transition-colors">{step.num}</div>
+            <div
+              class="absolute -top-3 -right-3 text-7xl font-black select-none leading-none pointer-events-none"
+              style="color: rgba(0,194,203,0.06);"
+            >
+              {step.num}
+            </div>
 
             <!-- Step number badge -->
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-cta-gradient text-white font-black text-lg mb-5 mx-auto" style="box-shadow: 0 0 20px rgba(124,58,237,0.5);">
-              {step.num.replace('0', '')}
+            <div
+              class="inline-flex items-center justify-center w-14 h-14 rounded-2xl font-black text-white text-lg mb-5 lg:mb-4 mx-auto lg:mx-0"
+              style="background: linear-gradient(135deg, #FF6B35 0%, #FF8C5E 100%); box-shadow: 0 4px 20px rgba(255,107,53,0.35);"
+            >
+              {i + 1}
             </div>
 
-            <div class="text-4xl mb-4">{step.emoji}</div>
+            <!-- Emoji -->
+            <div class="text-4xl mb-3 lg:mb-4 mx-auto lg:mx-0">{step.icon}</div>
+
             <h3 class="text-white font-bold text-xl mb-3">{step.title}</h3>
-            <p class="text-galaxy-muted text-sm leading-relaxed">{step.desc}</p>
+            <p class="text-kev-text/75 text-sm leading-relaxed mb-3">{step.desc}</p>
+            <p
+              class="text-xs font-semibold px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"
+              style="background: rgba(0,194,203,0.1); color: #00C2CB; border: 1px solid rgba(0,194,203,0.2);"
+            >
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {step.detail}
+            </p>
           </div>
-
-          <!-- Connector arrow (desktop only) -->
-          {i < steps.length - 1 && (
-            <div class="hidden lg:flex items-center justify-center text-galaxy-purple/60 text-2xl flex-shrink-0 w-8">
-              <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          )}
-          {i < steps.length - 1 && (
-            <div class="lg:hidden flex justify-center text-galaxy-purple/60">
-              <svg viewBox="0 0 24 24" class="w-6 h-6 rotate-90" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          )}
-        </>
-      ))}
+        ))}
+      </div>
     </div>
 
-    <!-- Bottom note -->
-    <div class="text-center mt-12" data-animate style="--delay: 450ms">
-      <p class="text-galaxy-stardust text-base">
-        That's it. Your room goes from <span class="text-galaxy-muted line-through">ordinary</span> to <span class="text-gradient font-bold">extraordinary</span> in seconds.
-      </p>
+    <!-- Timeline visual -->
+    <div class="mt-14 text-center" data-animate style="--delay: 350ms">
+      <div
+        class="inline-flex items-center gap-4 rounded-2xl px-8 py-5 border"
+        style="background: rgba(13,30,53,0.8); border-color: #162840;"
+      >
+        <div class="text-center px-4 border-r border-kev-border">
+          <p class="text-kev-teal font-black text-2xl font-display">Day 1</p>
+          <p class="text-kev-muted text-xs">We talk</p>
+        </div>
+        <svg class="w-5 h-5 text-kev-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="text-center px-4 border-r border-kev-border">
+          <p class="text-kev-orange font-black text-2xl font-display">Day 3</p>
+          <p class="text-kev-muted text-xs">Preview ready</p>
+        </div>
+        <svg class="w-5 h-5 text-kev-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="text-center px-4">
+          <p class="text-white font-black text-2xl font-display">Day 7</p>
+          <p class="text-kev-muted text-xs">You're live 🎉</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-12 text-center" data-animate style="--delay: 430ms">
+      <a href="#audit" class="btn-orange text-base py-4 px-10 rounded-full inline-flex">
+        Start My Website Today
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <p class="text-kev-muted text-sm mt-3">No commitment. Free consultation.</p>
     </div>
   </div>
 </section>

@@ -1,0 +1,201 @@
+---
+const includes = [
+  'Custom-designed website (up to 5 pages)',
+  'Mobile-first responsive design',
+  'Fast hosting & SSL certificate (HTTPS)',
+  'Google-ready on-page SEO setup',
+  'Contact form + click-to-call button',
+  'Google Maps / directions integration',
+  'Social media links',
+  'Monthly maintenance (2 updates/mo)',
+  '24-hour support via text/email',
+  '30-day money-back guarantee',
+];
+
+const addons = [
+  { name: 'Extra Pages', price: '+$49 each', icon: '📄' },
+  { name: 'E-commerce Store', price: '+$299', icon: '🛒' },
+  { name: 'Logo Design', price: '$199', icon: '🎨' },
+  { name: 'Local SEO Campaign', price: '+$99/mo', icon: '📍' },
+  { name: 'Blog Setup (monthly posts)', price: '+$79/mo', icon: '✍️' },
+  { name: 'Social Media Kit', price: '$149', icon: '📲' },
+];
+---
+
+<section id="pricing" class="relative py-24 overflow-hidden">
+  <div class="glow-orb w-[500px] h-[500px] bg-orange-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 animate-glow-pulse"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-14" data-animate>
+      <span class="section-label">Pricing</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-2 mb-4 leading-tight">
+        Simple, Honest Pricing.<br />
+        <span class="text-gradient-teal">No Surprises.</span>
+      </h2>
+      <p class="text-kev-text/75 text-lg max-w-xl mx-auto">
+        One fair price. Everything included. No hidden fees.
+      </p>
+    </div>
+
+    <!-- Value comparison -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10 max-w-5xl mx-auto">
+
+      <!-- Agency comparison -->
+      <div
+        class="glass-card p-8 relative"
+        data-animate
+        style="--delay: 0ms; border-color: rgba(239,68,68,0.2);"
+      >
+        <div
+          class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full mb-5"
+          style="background: rgba(239,68,68,0.1); color: #ef4444; border: 1px solid rgba(239,68,68,0.2);"
+        >
+          ✗ Traditional Agency
+        </div>
+        <div class="flex items-end gap-3 mb-5">
+          <span class="text-4xl font-black text-red-400 font-display">$5,000+</span>
+          <span class="text-kev-muted text-sm pb-1">setup</span>
+        </div>
+        <ul class="space-y-2.5 text-sm">
+          {[
+            '+ $200–500/month maintenance',
+            '6–12 weeks to launch',
+            'Confusing contracts',
+            'Have to manage a project team',
+            'You\'re just another client',
+          ].map((item) => (
+            <li class="flex items-center gap-2 text-kev-muted">
+              <span class="text-red-400 flex-shrink-0">✗</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- KevDigital -->
+      <div
+        class="relative rounded-2xl p-8 overflow-hidden"
+        style="background: linear-gradient(135deg, rgba(0,194,203,0.1) 0%, rgba(13,30,53,0.95) 100%); border: 2px solid rgba(0,194,203,0.35); box-shadow: 0 0 40px rgba(0,194,203,0.15);"
+        data-animate
+        style="--delay: 100ms"
+      >
+        <!-- Best value badge -->
+        <div
+          class="absolute top-0 right-6 text-xs font-black px-4 py-1.5 rounded-b-xl text-white"
+          style="background: linear-gradient(135deg, #FF6B35, #FF8C5E);"
+        >
+          BEST VALUE
+        </div>
+
+        <div class="flex items-center gap-3 mb-2">
+          <img src="/logo.svg" alt="KevDigital" class="w-8 h-8" />
+          <span class="text-white font-black text-lg font-display">KevDigital</span>
+        </div>
+
+        <div
+          class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full mb-5"
+          style="background: rgba(0,194,203,0.1); color: #00C2CB; border: 1px solid rgba(0,194,203,0.25);"
+        >
+          ✓ Miami-Based Web Design
+        </div>
+
+        <div class="flex items-end gap-2 mb-1">
+          <span class="text-5xl font-black text-white font-display">$399</span>
+          <span class="text-kev-muted text-sm pb-2">one-time setup</span>
+        </div>
+        <p class="text-kev-teal font-semibold text-sm mb-6">+ $39/month ongoing support</p>
+
+        <ul class="space-y-2.5 text-sm mb-7">
+          {[
+            'Live in 7 days — guaranteed',
+            'No contracts, cancel anytime',
+            'Unlimited revisions until perfect',
+            'Direct access to Kev (your designer)',
+            'We stay with you every month',
+          ].map((item) => (
+            <li class="flex items-center gap-2 text-kev-white">
+              <span class="text-kev-teal flex-shrink-0 font-bold">✓</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <a href="#audit" class="btn-orange w-full text-base py-4 rounded-full">
+          Get Started — $399 Setup
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- What's included -->
+    <div class="max-w-5xl mx-auto" data-animate style="--delay: 180ms">
+      <h3 class="text-white font-bold text-xl mb-6 text-center">Everything Included in Your $399 Website</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {includes.map((item, i) => (
+          <div
+            class="flex items-center gap-3 rounded-xl px-4 py-3 border"
+            style="background: rgba(13,30,53,0.6); border-color: #162840;"
+          >
+            <div
+              class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"
+              style="background: rgba(0,194,203,0.15);"
+            >
+              <svg class="w-3.5 h-3.5 text-kev-teal" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="text-kev-text text-sm">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Add-ons -->
+    <div class="max-w-5xl mx-auto mt-10" data-animate style="--delay: 250ms">
+      <h3 class="text-white font-bold text-lg mb-5 text-center">Optional Add-Ons</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {addons.map((addon) => (
+          <div
+            class="glass-card px-4 py-4 text-center"
+          >
+            <div class="text-2xl mb-2">{addon.icon}</div>
+            <p class="text-kev-white text-xs font-semibold mb-1">{addon.name}</p>
+            <p class="text-kev-teal text-xs font-bold">{addon.price}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Guarantee -->
+    <div
+      class="mt-10 rounded-2xl p-8 text-center border max-w-3xl mx-auto"
+      style="background: rgba(0,194,203,0.05); border-color: rgba(0,194,203,0.15);"
+      data-animate
+      style="--delay: 320ms"
+    >
+      <div class="text-5xl mb-4">🛡️</div>
+      <h3 class="text-white font-black text-xl mb-3">30-Day Money-Back Guarantee</h3>
+      <p class="text-kev-text/75 text-sm max-w-md mx-auto">
+        If your new website doesn't look exactly how we promised — or if you're not 100% satisfied within 30 days —
+        we'll refund every penny. No questions. No hassle. Zero risk to you.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-10 text-center" data-animate style="--delay: 370ms">
+      <a href="#audit" class="btn-orange text-lg py-5 px-12 rounded-full inline-flex">
+        Start My Website — Only $399
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <p class="text-kev-muted text-sm mt-3">
+        or <a href="tel:+17868004865" class="text-kev-teal hover:text-kev-tealLight transition-colors">call (786) 800-4865</a> to talk first
+      </p>
+    </div>
+  </div>
+</section>

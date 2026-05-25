@@ -1,126 +1,270 @@
 ---
-interface Props {
-  checkoutUrl: string;
-}
-const { checkoutUrl } = Astro.props;
+const stats = [
+  { value: '7', suffix: ' Days', label: 'Sites go live' },
+  { value: '399', suffix: '$', label: 'One-time setup', prefix: '$' },
+  { value: '100', suffix: '%', label: 'Mobile-first' },
+];
 ---
 
-<section id="hero" class="relative min-h-screen flex flex-col justify-center overflow-hidden">
-  <!-- Galaxy background -->
-  <div class="absolute inset-0 z-0">
-    <img
-      src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1600&q=85&auto=format&fit=crop"
-      alt="Galaxy background"
-      class="w-full h-full object-cover object-center"
-      loading="eager"
-    />
-    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(5,5,16,0.95) 0%, rgba(10,0,30,0.88) 45%, rgba(5,5,16,0.65) 100%);"></div>
-  </div>
+<section
+  id="hero"
+  class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-16"
+>
+  <!-- Background: dark navy + grid + glows -->
+  <div class="absolute inset-0 grid-bg z-0"></div>
+  <div
+    class="absolute inset-0 z-0"
+    style="background: radial-gradient(ellipse at 22% 55%, rgba(0,194,203,0.13) 0%, transparent 55%), radial-gradient(ellipse at 80% 18%, rgba(255,107,53,0.09) 0%, transparent 52%);"
+  ></div>
 
-  <div class="absolute top-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%);"></div>
-  <div class="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, transparent 70%);"></div>
+  <!-- Ambient glow orbs -->
+  <div class="glow-orb w-[500px] h-[500px] -top-32 -left-24 opacity-40 animate-glow-pulse" style="background: radial-gradient(circle, rgba(0,194,203,0.2) 0%, transparent 70%);"></div>
+  <div class="glow-orb w-[400px] h-[400px] top-1/4 -right-20 opacity-30 animate-glow-pulse" style="background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%); animation-delay: 2s;"></div>
+  <div class="glow-orb w-[300px] h-[300px] bottom-0 left-1/3 opacity-25" style="background: radial-gradient(circle, rgba(0,194,203,0.15) 0%, transparent 70%);"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pt-24">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-      <!-- Left: Copy -->
+      <!-- ── LEFT: Copy ── -->
       <div class="text-center lg:text-left order-2 lg:order-1">
-        <div class="inline-flex items-center gap-2 bg-galaxy-purple/25 border border-galaxy-purple/50 rounded-full px-4 py-2 text-sm font-bold text-white mb-5 backdrop-blur-sm">
-          <span class="text-red-400 animate-pulse">●</span> TRENDING ON TIKTOK · 10,000+ SOLD
+
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold text-white mb-6 border"
+          style="background: rgba(0,194,203,0.1); border-color: rgba(0,194,203,0.35);"
+          data-animate
+        >
+          <span class="pulse-dot flex-shrink-0"></span>
+          Miami-Based Web Design Agency · Serving Local Businesses
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] mb-5">
-          <span class="text-white">Turn Your Room Into</span><br />
-          <span class="text-gradient">Another Universe</span>
+        <!-- Headline -->
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-black leading-[1.06] mb-5 text-white"
+          data-animate
+          style="--delay: 60ms"
+        >
+          Websites That Get<br />
+          <span class="text-gradient-teal">More Customers</span><br />
+          <span class="text-gradient-orange">For Your Business</span>
         </h1>
 
-        <p class="text-lg sm:text-xl text-galaxy-stardust/90 mb-6 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-          Project moons, planets & galaxies onto your walls and ceiling. Immersive. Effortless. Unforgettable.
+        <!-- Subheadline -->
+        <p
+          class="text-lg sm:text-xl text-kev-text/85 mb-7 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+          data-animate
+          style="--delay: 120ms"
+        >
+          KevDigital builds professional, lightning-fast websites for Miami's local businesses.
+          <strong class="text-white font-semibold">$399 one-time setup.</strong>
+          Live in 7 days. No contracts.
         </p>
 
-        <!-- Price above CTA -->
-        <div class="flex items-center justify-center lg:justify-start gap-3 mb-6">
-          <span class="text-4xl font-black text-white">$24.95</span>
-          <div>
-            <span class="text-galaxy-muted line-through text-lg block">$31.19</span>
-            <span class="bg-green-500/20 text-green-400 border border-green-500/40 text-xs font-bold px-2 py-0.5 rounded-full">SAVE 20% TODAY</span>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-5">
-          <a href={checkoutUrl} class="btn-primary text-xl py-5 px-10">
-            🛒 Get Yours Today
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <!-- CTAs -->
+        <div
+          class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-7"
+          data-animate
+          style="--delay: 180ms"
+        >
+          <a href="#audit" class="btn-orange text-base py-4 px-8 rounded-full">
+            Get My Free Website Audit
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#portfolio" class="btn-outline text-base py-4 px-8 rounded-full">
+            View Our Work
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </a>
         </div>
 
-        <!-- Urgency -->
-        <div class="flex items-center justify-center lg:justify-start gap-2 mb-6">
-          <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-          <span class="text-red-400 text-sm font-semibold">Only 23 left · 47 people viewing right now</span>
-        </div>
-
-        <!-- Trust bullets -->
-        <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
-          {['🔌 USB Powered', '🪐 16 Slides Included', '🚚 Free Shipping', '↩️ 30-Day Returns'].map((b) => (
-            <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 rounded-full px-3 py-1.5 text-sm text-white backdrop-blur-sm">{b}</span>
+        <!-- Trust row -->
+        <div
+          class="flex flex-wrap justify-center lg:justify-start gap-2 mb-7"
+          data-animate
+          style="--delay: 240ms"
+        >
+          {[
+            { icon: '✓', text: '30-Day Money-Back Guarantee' },
+            { icon: '✓', text: 'Live in 7 Days' },
+            { icon: '✓', text: 'No Contracts' },
+            { icon: '✓', text: 'Unlimited Revisions' },
+          ].map((b) => (
+            <span
+              class="inline-flex items-center gap-1.5 text-xs font-medium text-kev-text/80 border border-kev-border rounded-full px-3 py-1.5"
+              style="background: rgba(13,30,53,0.6);"
+            >
+              <span class="text-kev-teal font-bold">{b.icon}</span>
+              {b.text}
+            </span>
           ))}
         </div>
 
-        <!-- Stars -->
-        <div class="flex items-center justify-center lg:justify-start gap-3">
-          <div class="flex -space-x-2">
-            {['#7c3aed','#4f46e5','#a855f7','#6366f1','#8b5cf6'].map((c, i) => (
-              <div class="w-8 h-8 rounded-full border-2 border-black/50 flex items-center justify-center text-xs font-black text-white" style={`background: ${c};`}>{String.fromCharCode(65 + i)}</div>
-            ))}
+        <!-- Social proof + phone -->
+        <div
+          class="flex flex-col sm:flex-row items-center lg:items-start gap-4 justify-center lg:justify-start"
+          data-animate
+          style="--delay: 300ms"
+        >
+          <!-- Avatar stack + stars -->
+          <div class="flex items-center gap-3">
+            <div class="flex -space-x-2.5">
+              {['#0E4094','#FF6B35','#00C2CB','#0A2860','#FF8C5E'].map((c, i) => (
+                <div
+                  class="w-8 h-8 rounded-full border-2 border-kev-bg flex items-center justify-center text-xs font-black text-white flex-shrink-0"
+                  style={`background: ${c};`}
+                >
+                  {String.fromCharCode(65 + i)}
+                </div>
+              ))}
+            </div>
+            <div>
+              <div class="stars text-sm">★★★★★</div>
+              <p class="text-xs text-kev-muted">Loved by Miami business owners</p>
+            </div>
           </div>
-          <div>
-            <div class="flex gap-0.5">{[1,2,3,4,5].map(() => <span class="text-galaxy-gold text-sm">★</span>)}</div>
-            <p class="text-xs text-galaxy-muted">2,847 verified reviews · 4.9/5</p>
-          </div>
+
+          <!-- Phone -->
+          <a
+            href="tel:+17868004865"
+            class="flex items-center gap-2 text-kev-teal font-semibold text-sm hover:text-kev-tealLight transition-colors"
+          >
+            <div
+              class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+              style="background: rgba(0,194,203,0.12); border: 1px solid rgba(0,194,203,0.3);"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            (786) 800-4865
+          </a>
         </div>
       </div>
 
-      <!-- Right: Real lifestyle photo showing the projection effect -->
-      <div class="order-1 lg:order-2 flex items-center justify-center">
-        <div class="relative w-full max-w-md animate-float">
-          <!-- Outer glow -->
-          <div class="absolute -inset-4 rounded-3xl animate-glow-pulse pointer-events-none" style="background: radial-gradient(ellipse, rgba(124,58,237,0.4) 0%, transparent 70%);"></div>
+      <!-- ── RIGHT: Phone mockup + floating elements ── -->
+      <div
+        class="order-1 lg:order-2 flex items-center justify-center"
+        data-animate
+        style="--delay: 100ms"
+      >
+        <div class="relative w-full max-w-lg">
 
-          <!-- Main lifestyle image: galaxy projection in bedroom -->
-          <div class="relative rounded-3xl overflow-hidden aspect-[4/5]" style="border: 1px solid rgba(168,85,247,0.5); box-shadow: 0 0 80px rgba(124,58,237,0.5), 0 0 160px rgba(124,58,237,0.2);">
-            <img
-              src="https://ae-pic-a1.aliexpress-media.com/kf/Sfaa2447c0eaa4ee4a82f4d6215aff09dI.jpg_960x960q75.jpg_.avif"
-              alt="Galaxy moon projection lamp lifestyle photo"
-              class="w-full h-full object-cover"
-              loading="eager"
-              referrerpolicy="no-referrer"
-            />
-            <!-- Brand-consistent purple tint overlay -->
-            <div class="absolute inset-0" style="background: linear-gradient(160deg, rgba(26,5,51,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(5,5,16,0.6) 100%);"></div>
+          <!-- Glow behind device -->
+          <div
+            class="absolute -inset-6 rounded-3xl pointer-events-none animate-glow-pulse"
+            style="background: radial-gradient(ellipse, rgba(0,194,203,0.2) 0%, transparent 70%);"
+          ></div>
 
-            <!-- Floating badge bottom-left -->
-            <div class="absolute bottom-5 left-5 right-5">
-              <div class="glass-card px-4 py-3 backdrop-blur-md" style="background: rgba(5,5,16,0.85);">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full flex-shrink-0" style="background: radial-gradient(circle at 35% 35%, #e8e0d0, #b0a898, #504840); box-shadow: 0 0 12px rgba(168,85,247,0.6);"></div>
-                  <div>
-                    <p class="text-white font-bold text-sm">Moon projection</p>
-                    <p class="text-galaxy-muted text-xs">Projects up to 280cm · Covers 12m²</p>
+          <!-- Browser / website mockup card -->
+          <div class="browser-frame animate-float" style="animation-delay: 0s;">
+            <!-- Browser bar -->
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <div class="browser-dot" style="background:#FF5F57;"></div>
+                <div class="browser-dot" style="background:#FEBC2E;"></div>
+                <div class="browser-dot" style="background:#28C840;"></div>
+              </div>
+              <div class="browser-url">kevdigital.com/your-business</div>
+            </div>
+            <!-- Mockup website preview -->
+            <div style="background: #0A1628; padding: 0; aspect-ratio: 16/10; overflow: hidden; position: relative;">
+              <!-- Simulated hero section of a client site -->
+              <div style="background: linear-gradient(135deg, #0A1628 0%, #0E2240 100%); height: 100%; display: flex; flex-direction: column; padding: 20px; gap: 12px; position: relative; overflow: hidden;">
+                <!-- Fake nav -->
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="width: 80px; height: 8px; background: rgba(255,255,255,0.6); border-radius: 4px;"></div>
+                  <div style="display: flex; gap: 8px;">
+                    {[1,2,3].map(() => <div style="width: 40px; height: 6px; background: rgba(255,255,255,0.25); border-radius: 3px;"></div>)}
+                    <div style="width: 60px; height: 20px; background: #FF6B35; border-radius: 10px;"></div>
                   </div>
-                  <div class="ml-auto flex gap-0.5">{[1,2,3,4,5].map(() => <span class="text-galaxy-gold text-xs">★</span>)}</div>
+                </div>
+                <!-- Fake hero content -->
+                <div style="flex: 1; display: flex; align-items: center; gap: 16px; margin-top: 10px;">
+                  <div style="flex: 1;">
+                    <div style="width: 90%; height: 14px; background: rgba(255,255,255,0.85); border-radius: 4px; margin-bottom: 8px;"></div>
+                    <div style="width: 70%; height: 14px; background: rgba(255,255,255,0.6); border-radius: 4px; margin-bottom: 16px;"></div>
+                    <div style="width: 60%; height: 8px; background: rgba(255,255,255,0.35); border-radius: 3px; margin-bottom: 6px;"></div>
+                    <div style="width: 45%; height: 8px; background: rgba(255,255,255,0.25); border-radius: 3px; margin-bottom: 20px;"></div>
+                    <div style="display: flex; gap: 8px;">
+                      <div style="width: 90px; height: 28px; background: #FF6B35; border-radius: 14px;"></div>
+                      <div style="width: 80px; height: 28px; background: transparent; border: 1px solid rgba(0,194,203,0.5); border-radius: 14px;"></div>
+                    </div>
+                  </div>
+                  <div style="width: 38%; aspect-ratio: 1; background: linear-gradient(135deg, rgba(0,194,203,0.2), rgba(255,107,53,0.15)); border-radius: 12px; border: 1px solid rgba(0,194,203,0.2); display: flex; align-items: center; justify-content: center;">
+                    <div style="width: 60%; height: 60%; background: rgba(0,194,203,0.15); border-radius: 8px;"></div>
+                  </div>
+                </div>
+                <!-- Fake trust bar -->
+                <div style="display: flex; gap: 8px; justify-content: center; padding-bottom: 4px;">
+                  {[1,2,3,4].map(() => <div style="width: 50px; height: 6px; background: rgba(255,255,255,0.12); border-radius: 3px;"></div>)}
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Floating planet badges -->
-          <div class="absolute -top-4 -right-4 w-14 h-14 rounded-full animate-glow-pulse" style="background: radial-gradient(circle at 35% 35%, #93c5fd, #1e3a8a); box-shadow: 0 0 20px rgba(147,197,253,0.7);" title="Earth projection"></div>
-          <div class="absolute -bottom-4 -left-4 w-10 h-10 rounded-full" style="background: radial-gradient(circle at 35% 35%, #fbbf24, #92400e); box-shadow: 0 0 16px rgba(251,191,36,0.6); animation: float 5s ease-in-out infinite 1s;" title="Jupiter projection"></div>
+          <!-- Floating stat badges -->
+          <div
+            class="absolute -left-6 top-1/4 glass-card px-4 py-3 text-center animate-float"
+            style="animation-delay: 1.5s; min-width: 90px;"
+          >
+            <p class="text-kev-teal font-black text-2xl font-display">7</p>
+            <p class="text-kev-muted text-[11px]">Days to live</p>
+          </div>
+
+          <div
+            class="absolute -right-6 top-1/2 glass-card px-4 py-3 text-center animate-float"
+            style="animation-delay: 3s; min-width: 90px;"
+          >
+            <p class="text-kev-orange font-black text-2xl font-display">$399</p>
+            <p class="text-kev-muted text-[11px]">Setup fee</p>
+          </div>
+
+          <div
+            class="absolute -bottom-4 left-1/4 glass-card px-4 py-2 flex items-center gap-2 animate-float"
+            style="animation-delay: 0.8s;"
+          >
+            <div class="pulse-dot flex-shrink-0"></div>
+            <span class="text-kev-white text-xs font-semibold whitespace-nowrap">Miami Local SEO Ready</span>
+          </div>
+
         </div>
       </div>
 
     </div>
+
+    <!-- Stats row -->
+    <div
+      class="mt-16 pt-8 border-t border-kev-border grid grid-cols-3 gap-4 max-w-2xl mx-auto lg:mx-0"
+      data-animate
+      style="--delay: 360ms"
+    >
+      {[
+        { num: '7', suffix: '', label: 'Days avg. delivery', teal: true },
+        { num: '399', suffix: '', label: 'Setup, no surprises', prefix: '$', orange: true },
+        { num: '39', suffix: '/mo', label: 'Ongoing support', prefix: '$' },
+      ].map((s) => (
+        <div class="text-center lg:text-left">
+          <p class="font-black text-3xl text-white font-display">
+            {s.prefix}<span
+              data-target={s.num}
+              data-suffix={s.suffix}
+              class:list={[s.teal ? 'text-gradient-teal' : s.orange ? 'text-gradient-orange' : 'text-white']}
+            >0{s.suffix}</span>
+          </p>
+          <p class="text-kev-muted text-xs mt-0.5">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-kev-muted animate-float" style="animation-delay: 1s;">
+    <span class="text-xs tracking-widest uppercase opacity-60">Scroll</span>
+    <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
   </div>
 </section>

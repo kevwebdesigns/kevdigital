@@ -1,0 +1,209 @@
+---
+const services = [
+  'Website Design',
+  'Website Redesign',
+  'Mobile Optimization',
+  'Local SEO Setup',
+  'Google Business Profile',
+  'E-commerce Websites',
+];
+
+const links = [
+  { href: '#services', label: 'Services' },
+  { href: '#portfolio', label: 'Portfolio' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#audit', label: 'Free Audit' },
+];
+
+const industries = [
+  'Restaurants',
+  'Auto Repair',
+  'Salons & Spas',
+  'Landscaping',
+  'Plumbing',
+  'Cleaning Services',
+  'Law Offices',
+  'Real Estate',
+];
+---
+
+<footer
+  class="relative pt-20 pb-8 overflow-hidden"
+  style="background: linear-gradient(180deg, #050D18 0%, #030A12 100%); border-top: 1px solid #162840;"
+>
+  <!-- Subtle top glow -->
+  <div
+    class="absolute top-0 left-0 right-0 h-[1px]"
+    style="background: linear-gradient(90deg, transparent, rgba(0,194,203,0.3), transparent);"
+  ></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Top section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+
+      <!-- Brand column -->
+      <div class="lg:col-span-1">
+        <a href="/" class="flex items-center gap-2.5 mb-5">
+          <img src="/logo.svg" alt="KevDigital" class="w-10 h-10" />
+          <div>
+            <span
+              class="block font-black text-xl text-white"
+              style="font-family: 'Plus Jakarta Sans', sans-serif;"
+            >
+              Kev<span class="text-gradient-teal">Digital</span>
+            </span>
+            <span class="block text-[9px] text-kev-muted tracking-widest uppercase">Local Miami Web Solutions</span>
+          </div>
+        </a>
+        <p class="text-kev-muted text-sm leading-relaxed mb-6">
+          Professional websites for Miami's local businesses. $399 setup. Live in 7 days.
+          No contracts. No BS.
+        </p>
+        <!-- Social links -->
+        <div class="flex items-center gap-3">
+          <a
+            href="https://www.tiktok.com/@kevwebdesigns"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-9 h-9 rounded-xl flex items-center justify-center text-kev-muted hover:text-white transition-colors"
+            style="background: rgba(255,255,255,0.06); border: 1px solid #162840;"
+            aria-label="TikTok"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          </a>
+          <a
+            href="https://www.instagram.com/kevwebdesigns1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-9 h-9 rounded-xl flex items-center justify-center text-kev-muted hover:text-white transition-colors"
+            style="background: rgba(255,255,255,0.06); border: 1px solid #162840;"
+            aria-label="Instagram"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a
+            href="mailto:kevwebdesigns1@gmail.com"
+            class="w-9 h-9 rounded-xl flex items-center justify-center text-kev-muted hover:text-white transition-colors"
+            style="background: rgba(255,255,255,0.06); border: 1px solid #162840;"
+            aria-label="Email"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-5">Services</h4>
+        <ul class="space-y-3">
+          {services.map((s) => (
+            <li>
+              <a href="#audit" class="text-kev-muted text-sm hover:text-kev-teal transition-colors">
+                {s}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-5">Quick Links</h4>
+        <ul class="space-y-3">
+          {links.map((l) => (
+            <li>
+              <a href={l.href} class="text-kev-muted text-sm hover:text-kev-teal transition-colors">
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4 mt-8">Industries</h4>
+        <ul class="space-y-3">
+          {industries.slice(0, 5).map((i) => (
+            <li>
+              <span class="text-kev-muted text-sm">{i}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-5">Contact</h4>
+        <div class="space-y-4">
+          <a href="tel:+17868004865" class="flex items-start gap-3 group">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(0,194,203,0.1);">
+              <svg class="w-4 h-4 text-kev-teal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-kev-muted text-xs mb-0.5">Phone / Text</p>
+              <p class="text-white text-sm font-semibold group-hover:text-kev-teal transition-colors">(786) 800-4865</p>
+            </div>
+          </a>
+
+          <a href="mailto:kevwebdesigns1@gmail.com" class="flex items-start gap-3 group">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(0,194,203,0.1);">
+              <svg class="w-4 h-4 text-kev-teal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-kev-muted text-xs mb-0.5">Email</p>
+              <p class="text-white text-sm font-semibold group-hover:text-kev-teal transition-colors break-all">kevwebdesigns1@gmail.com</p>
+            </div>
+          </a>
+
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(0,194,203,0.1);">
+              <svg class="w-4 h-4 text-kev-teal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-kev-muted text-xs mb-0.5">Location</p>
+              <p class="text-white text-sm font-semibold">Miami, Florida</p>
+              <p class="text-kev-muted text-xs">Serving all of South Florida</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final CTA -->
+        <a href="#audit" class="mt-7 btn-orange text-sm py-3 px-6 rounded-full inline-flex w-full justify-center">
+          Get My Free Audit
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="section-divider mb-8"></div>
+
+    <!-- Bottom bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-kev-muted text-xs text-center sm:text-left">
+        © {new Date().getFullYear()} KevDigital. All rights reserved.
+        Built with ❤️ in Miami, FL.
+      </p>
+      <div class="flex items-center gap-4 text-xs text-kev-muted">
+        <a href="#" class="hover:text-kev-teal transition-colors">Privacy Policy</a>
+        <span>·</span>
+        <a href="#" class="hover:text-kev-teal transition-colors">Terms of Service</a>
+        <span>·</span>
+        <a href="#audit" class="text-kev-teal hover:text-kev-tealLight transition-colors font-semibold">Free Audit →</a>
+      </div>
+    </div>
+  </div>
+</footer>

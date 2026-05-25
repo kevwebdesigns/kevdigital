@@ -1,68 +1,60 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import TrustBar from '../components/TrustBar.astro';
-import AsSeenOn from '../components/AsSeenOn.astro';
+import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
 import Problem from '../components/Problem.astro';
-import Solution from '../components/Solution.astro';
-import FeaturesGrid from '../components/FeaturesGrid.astro';
-import WhyPeopleLoveIt from '../components/WhyPeopleLoveIt.astro';
-import SocialProof from '../components/SocialProof.astro';
+import Portfolio from '../components/Portfolio.astro';
 import HowItWorks from '../components/HowItWorks.astro';
-import ProductShowcase from '../components/ProductShowcase.astro';
-import OfferSection from '../components/OfferSection.astro';
+import Pricing from '../components/Pricing.astro';
+import Testimonials from '../components/Testimonials.astro';
+import LeadForm from '../components/LeadForm.astro';
 import FAQ from '../components/FAQ.astro';
-import FinalCTA from '../components/FinalCTA.astro';
-import StickyCartBar from '../components/StickyCartBar.astro';
-
-const CHECKOUT_URL = 'https://h01pxzs96jv6t60q-83876937968.shopifypreview.com/';
+import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout
-  title="Galaxy Moon Projection Lamp — Turn Your Room Into Another Universe"
-  description="Create a relaxing galaxy atmosphere in seconds. USB-powered projector lamp with 16 interchangeable planet slides. 20% off today only. Free shipping, 30-day returns."
->
-  <!-- Section 1: Hero — cinematic galaxy background, price shown, urgency -->
-  <Hero checkoutUrl={CHECKOUT_URL} />
-
-  <!-- Trust bar — scrolling marquee -->
+<BaseLayout>
+  <Navbar />
+  <Hero />
   <TrustBar />
-
-  <!-- As Seen On — viral credibility bar -->
-  <AsSeenOn />
-
-  <!-- Section 2: Problem — pain points -->
   <Problem />
-
-  <div class="gradient-divider"></div>
-
-  <!-- Section 3: Solution — lifestyle imagery, before/after -->
-  <Solution checkoutUrl={CHECKOUT_URL} />
-
-  <!-- Section 4: Features Grid — 6 icon feature cards -->
-  <FeaturesGrid />
-
-  <!-- Section 5: Why People Love It — emotional benefits -->
-  <WhyPeopleLoveIt />
-
-  <!-- Section 6: Social Proof — 6 reviews + rating breakdown -->
-  <SocialProof />
-
-  <!-- Section 7: How It Works — 3-step process -->
+  <div class="section-divider"></div>
+  <Portfolio />
+  <div class="section-divider"></div>
   <HowItWorks />
-
-  <!-- Section 8: Product Showcase — gallery, planet grid, buy section -->
-  <ProductShowcase checkoutUrl={CHECKOUT_URL} />
-
-  <!-- Section 9: Offer + Countdown — high urgency -->
-  <OfferSection checkoutUrl={CHECKOUT_URL} />
-
-  <!-- Section 10: FAQ — accordion -->
+  <div class="section-divider"></div>
+  <Pricing />
+  <div class="section-divider"></div>
+  <Testimonials />
+  <LeadForm />
   <FAQ />
+  <Footer />
 
-  <!-- Section 11: Final CTA — galaxy bg, emotional close -->
-  <FinalCTA checkoutUrl={CHECKOUT_URL} />
-
-  <!-- Sticky mobile cart bar -->
-  <StickyCartBar checkoutUrl={CHECKOUT_URL} />
+  <!-- Sticky mobile CTA bar -->
+  <div
+    id="sticky-cta"
+    class="fixed bottom-0 left-0 right-0 z-50 md:hidden"
+    style="background: rgba(5,13,24,0.97); border-top: 1px solid #162840; backdrop-filter: blur(16px);"
+  >
+    <div class="flex items-center gap-3 px-4 py-3">
+      <a
+        href="tel:+17868004865"
+        class="flex-1 flex items-center justify-center gap-2 btn-outline text-sm py-3 px-4 rounded-full"
+      >
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Call Now
+      </a>
+      <a
+        href="#audit"
+        class="flex-1 btn-orange text-sm py-3 px-4 rounded-full"
+      >
+        Free Audit
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
 </BaseLayout>

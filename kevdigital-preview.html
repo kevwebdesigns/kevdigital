@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="KevDigital builds professional, mobile-first websites for Miami local businesses. One-time $399 setup, then $39/month. Sites live in 24 hours." />
+<meta name="theme-color" content="#050D18" />
+<meta property="og:title" content="KevDigital | Miami Web Design — Your Site Live in 24 Hours" />
+<meta property="og:description" content="Professional websites for Miami businesses. $399 setup, $39/month. Live in 24 hours." />
+<meta property="og:type" content="website" />
+<title>KevDigital | Miami Web Design — Your Site Live in 24 Hours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050D18;--card:#0D1E35;--border:#162840;
+  --teal:#00C2CB;--teal-light:#33D4DB;--teal-dark:#009BA3;
+  --orange:#FF6B35;--orange-light:#FF8A5B;
+  --text:#A8BFD4;--white:#F0F6FF;--muted:#5C7A94;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6}
+h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;line-height:1.15;color:var(--white)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* ── Utilities ── */
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+@media(min-width:640px){.container{padding:0 32px}}
+@media(min-width:1024px){.container{padding:0 40px}}
+
+.text-teal{color:var(--teal)}
+.text-orange{color:var(--orange)}
+.text-white{color:var(--white)}
+.text-muted{color:var(--muted)}
+
+.grad-teal{background:linear-gradient(135deg,var(--teal),#0ef2ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-orange{background:linear-gradient(135deg,var(--orange),#ffb347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+.section-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);background:rgba(0,194,203,.1);border:1px solid rgba(0,194,203,.25);padding:5px 14px;border-radius:100px}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;border:none;cursor:pointer;transition:all .2s;text-decoration:none;white-space:nowrap}
+.btn-orange{background:linear-gradient(135deg,#FF6B35,#FF8A1C);color:#fff;padding:14px 28px;border-radius:100px;font-size:15px;box-shadow:0 0 32px rgba(255,107,53,.35)}
+.btn-orange:hover{transform:translateY(-2px);box-shadow:0 0 48px rgba(255,107,53,.5)}
+.btn-outline{background:transparent;color:var(--teal);border:1.5px solid var(--teal);padding:14px 28px;border-radius:100px;font-size:15px}
+.btn-outline:hover{background:rgba(0,194,203,.1);transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.05);color:var(--white);border:1px solid var(--border);padding:12px 22px;border-radius:100px;font-size:14px}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* ── Cards ── */
+.glass{background:rgba(13,30,53,.6);border:1px solid var(--border);border-radius:20px;backdrop-filter:blur(12px)}
+
+/* ── Scroll animations ── */
+[data-anim]{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+[data-anim].visible{opacity:1;transform:none}
+
+/* ── Glow orbs ── */
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+
+/* ── Stars ── */
+.stars{color:#FFD700;letter-spacing:2px}
+
+/* ────────────────────────────────
+   NAVBAR
+──────────────────────────────── */
+#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(5,13,24,.7);backdrop-filter:blur(20px);
+  border-bottom:1px solid transparent;
+  transition:all .3s;
+}
+#navbar.scrolled{border-bottom-color:var(--border);background:rgba(5,13,24,.95)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:64px}
+@media(min-width:1024px){.nav-inner{padding:0 40px}}
+
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#00C2CB,#0E4094);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:18px;color:#fff}
+.nav-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:18px;color:var(--white)}
+.nav-logo-sub{display:block;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;font-weight:500}
+
+.nav-links{display:none;align-items:center;gap:28px}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text);transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+
+.nav-cta{display:none;align-items:center;gap:12px}
+@media(min-width:768px){.nav-cta{display:flex}}
+.nav-phone{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--teal);transition:color .2s}
+.nav-phone:hover{color:var(--teal-light)}
+.nav-phone svg{width:15px;height:15px}
+
+.hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;font-size:18px;transition:all .2s}
+.hamburger:hover{color:var(--white);border-color:var(--muted)}
+@media(min-width:768px){.hamburger{display:none}}
+
+#mobile-menu{display:none;border-top:1px solid var(--border);background:rgba(5,13,24,.98)}
+#mobile-menu.open{display:block}
+.mobile-links{padding:16px 20px;display:flex;flex-direction:column;gap:4px}
+.mobile-links a{padding:12px 16px;border-radius:12px;font-size:14px;font-weight:500;color:var(--text);transition:all .2s}
+.mobile-links a:hover{color:var(--white);background:var(--card)}
+.mobile-cta-row{padding:0 20px 20px;display:flex;flex-direction:column;gap:10px}
+.mobile-cta-row .btn{justify-content:center}
+
+/* ────────────────────────────────
+   HERO
+──────────────────────────────── */
+#hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  padding:120px 0 80px;overflow:hidden;
+}
+.hero-bg-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(0,194,203,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,194,203,.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 30%,transparent 100%);
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 30%,transparent 100%);
+}
+.hero-orb-1{top:-100px;left:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,194,203,.15),transparent 70%)}
+.hero-orb-2{bottom:-80px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,53,.12),transparent 70%)}
+
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr;gap:64px;align-items:center}
+@media(min-width:1024px){.hero-content{grid-template-columns:1fr 1fr;padding:0 40px}}
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;background:rgba(0,194,203,.08);border:1px solid rgba(0,194,203,.2);font-size:13px;font-weight:600;color:var(--teal);margin-bottom:24px}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+
+h1.hero-headline{font-size:clamp(38px,6vw,72px);font-weight:900;color:var(--white);margin-bottom:20px}
+
+.hero-sub{font-size:clamp(16px,2vw,19px);color:var(--text);max-width:520px;line-height:1.7;margin-bottom:36px}
+
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
+
+.hero-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--text)}
+.trust-check{width:18px;height:18px;border-radius:50%;background:rgba(0,194,203,.15);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:10px;flex-shrink:0}
+
+/* Hero stats */
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+@media(min-width:640px){.hero-stats{gap:32px}}
+.stat-card{text-align:center;padding:20px 24px;border-radius:16px;background:rgba(13,30,53,.7);border:1px solid var(--border)}
+.stat-number{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:900;color:var(--white)}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px}
+
+/* Hero visual — browser mockup */
+.hero-visual{position:relative}
+.browser-mock{border-radius:16px;overflow:hidden;border:1px solid var(--border);background:var(--card);box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 0 1px rgba(0,194,203,.12)}
+.browser-bar{background:#0A1929;padding:10px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border)}
+.browser-dots{display:flex;gap:6px}
+.browser-dot{width:10px;height:10px;border-radius:50%}
+.browser-url{flex:1;background:rgba(255,255,255,.05);border-radius:6px;padding:5px 12px;font-size:11px;color:var(--muted);font-family:'Inter',sans-serif}
+.browser-iframe-wrap{height:380px;overflow:hidden;position:relative;background:#fff}
+.browser-iframe-wrap iframe{width:100%;height:600%;transform:scale(.167);transform-origin:top left;border:none;pointer-events:none}
+.browser-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(5,13,24,.8) 100%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px}
+.browser-overlay a{display:inline-flex;align-items:center;gap:8px;background:rgba(0,194,203,.9);color:#fff;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;backdrop-filter:blur(4px)}
+
+/* Floating badges */
+.float-badge{position:absolute;display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:100px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.4);animation:float 4s ease-in-out infinite}
+.float-badge-1{background:linear-gradient(135deg,#00C2CB,#0099A8);color:#fff;top:30px;right:-20px}
+.float-badge-2{background:linear-gradient(135deg,#FF6B35,#E84D1A);color:#fff;bottom:70px;left:-20px;animation-delay:2s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ────────────────────────────────
+   TRUST BAR
+──────────────────────────────── */
+.trust-bar{
+  overflow:hidden;
+  background:rgba(0,194,203,.05);
+  border-top:1px solid rgba(0,194,203,.12);
+  border-bottom:1px solid rgba(0,194,203,.12);
+  padding:12px 0;
+}
+.marquee-track{display:flex;gap:0;animation:marquee 35s linear infinite;width:max-content}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text);padding:0 32px;white-space:nowrap;flex-shrink:0}
+.marquee-sep{color:rgba(0,194,203,.4);font-size:8px}
+
+/* ────────────────────────────────
+   PROBLEM SECTION
+──────────────────────────────── */
+.problem-section{padding:100px 0;position:relative;overflow:hidden}
+.problem-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:60px}
+@media(min-width:640px){.problem-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.problem-grid{grid-template-columns:repeat(3,1fr)}}
+
+.problem-card{padding:28px;border-radius:20px;background:rgba(13,30,53,.5);border:1px solid var(--border);position:relative;overflow:hidden;transition:all .3s}
+.problem-card:hover{border-color:rgba(255,107,53,.3);transform:translateY(-3px)}
+.problem-icon{font-size:28px;margin-bottom:16px;display:block}
+.problem-card h3{font-size:17px;color:var(--white);margin-bottom:8px}
+.problem-card p{font-size:14px;color:var(--text);line-height:1.65}
+.problem-card-accent{position:absolute;top:0;right:0;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,53,.1),transparent 70%);transform:translate(30px,-30px)}
+
+.solution-callout{margin-top:48px;padding:32px;border-radius:20px;background:linear-gradient(135deg,rgba(0,194,203,.08),rgba(14,64,148,.08));border:1px solid rgba(0,194,203,.2);display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+@media(min-width:768px){.solution-callout{flex-direction:row;align-items:center}}
+.solution-callout p{font-size:17px;font-weight:600;color:var(--white);flex:1;line-height:1.5}
+
+/* ────────────────────────────────
+   PORTFOLIO
+──────────────────────────────── */
+.portfolio-section{padding:100px 0;position:relative;overflow:hidden}
+.portfolio-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-top:60px}
+@media(min-width:1024px){.portfolio-grid{grid-template-columns:1fr 1fr}}
+
+.portfolio-item{}
+.portfolio-frame{border-radius:16px;overflow:hidden;border:1px solid var(--border);background:var(--card);box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(0,194,203,.08);transition:transform .4s;position:relative}
+.portfolio-frame:hover{transform:translateY(-4px)}
+.portfolio-bar{background:#0A1929;padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border)}
+.portfolio-dots{display:flex;gap:5px}
+.portfolio-dot{width:9px;height:9px;border-radius:50%}
+.portfolio-url{flex:1;background:rgba(255,255,255,.05);border-radius:5px;padding:4px 10px;font-size:11px;color:var(--muted)}
+.portfolio-iframe-wrap{height:340px;overflow:hidden;position:relative;background:#fff}
+.portfolio-iframe-wrap iframe{width:100%;height:600%;transform:scale(.167);transform-origin:top left;border:none;pointer-events:none}
+.portfolio-hover{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,13,24,.85) 0%,transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px}
+.portfolio-frame:hover .portfolio-hover{opacity:1}
+.portfolio-hover a{display:inline-flex;align-items:center;gap:7px;background:rgba(0,194,203,.92);color:#fff;padding:9px 18px;border-radius:100px;font-size:13px;font-weight:700}
+
+.portfolio-meta{margin-top:16px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.portfolio-meta h3{font-size:18px;color:var(--white)}
+.portfolio-meta p{font-size:13px;color:var(--muted);margin-top:3px}
+.portfolio-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.portfolio-tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;background:rgba(0,194,203,.1);color:var(--teal);border:1px solid rgba(0,194,203,.2)}
+
+/* ────────────────────────────────
+   HOW IT WORKS
+──────────────────────────────── */
+.hiw-section{padding:100px 0;position:relative;overflow:hidden}
+.hiw-steps{display:grid;grid-template-columns:1fr;gap:0;margin-top:60px;position:relative}
+@media(min-width:1024px){.hiw-steps{grid-template-columns:repeat(3,1fr)}}
+.hiw-connector{display:none;position:absolute;top:40px;left:33.333%;right:33.333%;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent);opacity:.3}
+@media(min-width:1024px){.hiw-connector{display:block}}
+
+.hiw-step{padding:32px;position:relative}
+.hiw-step::before{content:'';position:absolute;left:20px;top:80px;bottom:0;width:1px;background:linear-gradient(to bottom,rgba(0,194,203,.3),transparent);display:none}
+@media(max-width:1023px){.hiw-step:not(:last-child)::before{display:block}}
+.hiw-day{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:100px;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.25);font-size:12px;font-weight:700;color:var(--orange);margin-bottom:20px}
+.hiw-step-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(0,194,203,.15),rgba(0,194,203,.05));border:1px solid rgba(0,194,203,.2);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+.hiw-step h3{font-size:20px;color:var(--white);margin-bottom:10px}
+.hiw-step p{font-size:14px;color:var(--text);line-height:1.7}
+.hiw-step ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.hiw-step ul li{font-size:13px;color:var(--text);display:flex;align-items:flex-start;gap:8px}
+.hiw-step ul li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* ────────────────────────────────
+   PRICING
+──────────────────────────────── */
+.pricing-section{padding:100px 0;position:relative;overflow:hidden}
+.pricing-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:60px}
+@media(min-width:768px){.pricing-grid{grid-template-columns:1fr 1fr;max-width:800px;margin-left:auto;margin-right:auto}}
+
+.pricing-card{padding:36px;border-radius:24px;background:rgba(13,30,53,.6);border:1px solid var(--border);position:relative;overflow:hidden}
+.pricing-card.featured{border-color:var(--teal);background:rgba(0,194,203,.05)}
+.pricing-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--teal-light))}
+.pricing-badge{position:absolute;top:20px;right:20px;padding:5px 12px;border-radius:100px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));font-size:11px;font-weight:700;color:#fff}
+.pricing-label{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px}
+.pricing-price{display:flex;align-items:baseline;gap:4px;margin-bottom:6px}
+.pricing-dollar{font-size:24px;font-weight:800;color:var(--white)}
+.pricing-amount{font-family:'Plus Jakarta Sans',sans-serif;font-size:56px;font-weight:900;color:var(--white);line-height:1}
+.pricing-period{font-size:15px;color:var(--muted)}
+.pricing-desc{font-size:14px;color:var(--text);margin-bottom:28px}
+.pricing-features{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.pricing-feat{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text)}
+.pricing-feat-icon{color:var(--teal);font-size:13px;flex-shrink:0;margin-top:2px;font-weight:800}
+.pricing-feat span{font-weight:600;color:var(--white);margin-right:4px}
+.pricing-feat.strikethrough{color:var(--muted);text-decoration:line-through}
+.pricing-feat.strikethrough .pricing-feat-icon{color:var(--muted)}
+
+/* Value stack */
+.value-stack{margin-top:60px;padding:40px;border-radius:24px;background:rgba(13,30,53,.5);border:1px solid var(--border)}
+.value-stack h3{font-size:22px;color:var(--white);margin-bottom:28px;text-align:center}
+.value-items{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+@media(min-width:640px){.value-items{grid-template-columns:1fr 1fr}}
+.value-item{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--border)}
+.value-name{font-size:14px;color:var(--text)}
+.value-price{font-size:14px;font-weight:700;color:var(--white)}
+.value-total{display:flex;align-items:center;justify-content:space-between;padding:20px 20px;border-radius:12px;background:rgba(0,194,203,.07);border:1px solid rgba(0,194,203,.2)}
+.value-total-label{font-size:16px;font-weight:700;color:var(--white)}
+.value-total-price{display:flex;flex-direction:column;align-items:flex-end}
+.value-total-old{font-size:14px;color:var(--muted);text-decoration:line-through}
+.value-total-new{font-size:28px;font-weight:900;color:var(--teal)}
+
+/* Comparison table */
+.comparison{margin-top:48px;overflow-x:auto}
+.comp-table{width:100%;border-collapse:collapse;min-width:480px}
+.comp-table th,.comp-table td{padding:14px 20px;text-align:left;font-size:14px;border-bottom:1px solid var(--border)}
+.comp-table thead th{background:rgba(13,30,53,.8);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.comp-table thead th:first-child{border-radius:12px 0 0 0}
+.comp-table thead th:last-child{border-radius:0 12px 0 0}
+.comp-table td:first-child{color:var(--text)}
+.comp-table .col-kev{background:rgba(0,194,203,.04);color:var(--teal);font-weight:700}
+.comp-table .col-agency{color:#EF4444}
+.comp-table .col-diy{color:var(--muted)}
+.comp-table th.col-kev{color:var(--teal)}
+.check-yes{color:var(--teal);font-weight:700}
+.check-no{color:#EF4444}
+
+/* Guarantee */
+.guarantee-card{margin-top:48px;padding:36px;border-radius:24px;background:linear-gradient(135deg,rgba(0,194,203,.06),rgba(14,64,148,.06));border:1px solid rgba(0,194,203,.2);display:flex;flex-direction:column;gap:20px;align-items:flex-start;text-align:left}
+@media(min-width:768px){.guarantee-card{flex-direction:row;align-items:center}}
+.guarantee-icon{font-size:56px;flex-shrink:0}
+.guarantee-card h3{font-size:22px;color:var(--white);margin-bottom:8px}
+.guarantee-card p{font-size:15px;color:var(--text);line-height:1.7}
+
+/* ────────────────────────────────
+   TESTIMONIALS
+──────────────────────────────── */
+.testimonials-section{padding:100px 0;position:relative;overflow:hidden}
+.reviews-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:60px}
+@media(min-width:640px){.reviews-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.reviews-grid{grid-template-columns:repeat(3,1fr)}}
+
+.review-card{padding:28px;border-radius:20px;background:rgba(13,30,53,.6);border:1px solid var(--border);position:relative;overflow:hidden;transition:all .3s}
+.review-card:hover{border-color:rgba(0,194,203,.25);transform:translateY(-3px)}
+.review-quote{position:absolute;top:12px;right:16px;font-size:64px;font-family:Georgia,serif;line-height:1;color:rgba(0,194,203,.05);pointer-events:none;select:none}
+.review-stars{color:#FFD700;font-size:14px;letter-spacing:3px;margin-bottom:14px}
+.review-text{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:20px;position:relative;z-index:1}
+.reviewer{display:flex;align-items:center;gap:12px}
+.reviewer-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:15px;color:#fff;flex-shrink:0}
+.reviewer-name{font-size:14px;font-weight:700;color:var(--white)}
+.reviewer-biz{font-size:12px;color:var(--muted)}
+
+.google-badge{margin-top:40px;display:flex;justify-content:center}
+.google-badge-inner{display:inline-flex;align-items:center;gap:16px;padding:16px 24px;border-radius:16px;background:rgba(13,30,53,.7);border:1px solid var(--border)}
+.google-badge-inner svg{width:24px;height:24px;flex-shrink:0}
+.google-badge-stars{font-size:13px;color:#FFD700}
+.google-badge-sub{font-size:12px;color:var(--muted)}
+.google-badge-link{font-size:13px;font-weight:700;color:var(--teal);transition:color .2s}
+.google-badge-link:hover{color:var(--teal-light)}
+
+/* ────────────────────────────────
+   CONTACT / LEAD FORM
+──────────────────────────────── */
+.contact-section{padding:100px 0;position:relative;overflow:hidden}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:48px;margin-top:60px}
+@media(min-width:1024px){.contact-grid{grid-template-columns:1fr 1fr}}
+
+.contact-info h3{font-size:28px;color:var(--white);margin-bottom:16px}
+.contact-info p{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:32px}
+.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:16px;font-size:15px;color:var(--text)}
+.contact-detail-icon{width:40px;height:40px;border-radius:12px;background:rgba(0,194,203,.1);border:1px solid rgba(0,194,203,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-detail a{color:var(--white);font-weight:600;transition:color .2s}
+.contact-detail a:hover{color:var(--teal)}
+
+.contact-social{margin-top:28px;display:flex;gap:12px}
+.social-btn{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:100px;border:1px solid var(--border);font-size:13px;font-weight:600;color:var(--text);transition:all .2s}
+.social-btn:hover{border-color:var(--teal);color:var(--teal)}
+
+.contact-form-wrap{padding:40px;border-radius:24px;background:rgba(13,30,53,.6);border:1px solid var(--border)}
+.form-title{font-size:22px;color:var(--white);margin-bottom:6px}
+.form-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+.form-row{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:16px}
+@media(min-width:500px){.form-row.two{grid-template-columns:1fr 1fr}}
+.form-group{display:flex;flex-direction:column;gap:7px}
+.form-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.form-input{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:13px 16px;font-size:14px;color:var(--white);font-family:'Inter',sans-serif;transition:border-color .2s;outline:none;width:100%}
+.form-input:focus{border-color:var(--teal)}
+.form-input::placeholder{color:var(--muted)}
+select.form-input{cursor:pointer}
+select.form-input option{background:var(--card);color:var(--white)}
+.form-submit{width:100%;padding:16px;font-size:16px;margin-top:8px;justify-content:center}
+.form-success{display:none;text-align:center;padding:32px;background:rgba(0,194,203,.08);border-radius:16px;border:1px solid rgba(0,194,203,.25)}
+.form-success h3{color:var(--teal);font-size:20px;margin-bottom:10px}
+.form-success p{font-size:14px;color:var(--text)}
+
+/* ────────────────────────────────
+   FAQ
+──────────────────────────────── */
+.faq-section{padding:100px 0;position:relative;overflow:hidden}
+.faq-list{max-width:760px;margin:60px auto 0;display:flex;flex-direction:column;gap:8px}
+.faq-item{border-radius:16px;border:1px solid var(--border);background:rgba(13,30,53,.5);overflow:hidden;transition:border-color .2s}
+.faq-item.open,.faq-item:hover{border-color:rgba(0,194,203,.25)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white)}
+.faq-q:hover{color:var(--teal)}
+.faq-icon{width:24px;height:24px;border-radius:50%;background:rgba(0,194,203,.1);border:1px solid rgba(0,194,203,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--teal);font-size:14px;font-weight:900;transition:all .3s}
+.faq-item.open .faq-icon{background:rgba(0,194,203,.2);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:0 24px 22px;font-size:15px;color:var(--text);line-height:1.75}
+
+/* ────────────────────────────────
+   FOOTER
+──────────────────────────────── */
+footer{padding:72px 0 32px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:48px;margin-bottom:64px}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+
+.footer-brand p{font-size:14px;color:var(--muted);line-height:1.75;margin-top:16px;max-width:280px}
+.footer-social{margin-top:24px;display:flex;gap:10px}
+.footer-social a{width:36px;height:36px;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--text);transition:all .2s}
+.footer-social a:hover{border-color:var(--teal);color:var(--teal)}
+.footer-col h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:14px;color:var(--text);transition:color .2s}
+.footer-col ul li a:hover{color:var(--white)}
+.footer-contact-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text);margin-bottom:12px}
+.footer-contact-item a{color:var(--text);transition:color .2s}
+.footer-contact-item a:hover{color:var(--teal)}
+
+.footer-bottom{border-top:1px solid var(--border);padding-top:32px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+@media(min-width:640px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+.footer-bottom p{font-size:13px;color:var(--muted)}
+
+/* ────────────────────────────────
+   STICKY MOBILE CTA
+──────────────────────────────── */
+#sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:90;
+  padding:12px 16px;
+  background:rgba(5,13,24,.96);
+  border-top:1px solid var(--border);
+  backdrop-filter:blur(16px);
+  display:flex;gap:10px;
+  transform:translateY(100%);
+  transition:transform .35s ease;
+}
+#sticky-cta.show{transform:translateY(0)}
+@media(min-width:768px){#sticky-cta{display:none}}
+#sticky-cta a{flex:1;justify-content:center;padding:14px;font-size:14px}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     NAVBAR
+══════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">K</div>
+      <div>
+        <span class="nav-logo-text">Kev<span class="grad-teal">Digital</span></span>
+        <span class="nav-logo-sub">Miami Web Design</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-cta">
+      <a href="tel:+17868004865" class="nav-phone">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        (786) 800-4865
+      </a>
+      <a href="#contact" class="btn btn-orange" style="padding:10px 22px;font-size:14px">Free Audit →</a>
+    </div>
+
+    <button class="hamburger" id="menu-btn" aria-label="Toggle menu">☰</button>
+  </div>
+
+  <div id="mobile-menu">
+    <div class="mobile-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="mobile-cta-row">
+      <a href="tel:+17868004865" class="btn btn-outline">📞 (786) 800-4865</a>
+      <a href="#contact" class="btn btn-orange">Get Free Website Audit →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section id="hero">
+  <div class="orb hero-orb-1"></div>
+  <div class="orb hero-orb-2"></div>
+  <div class="hero-bg-grid"></div>
+
+  <div class="hero-content">
+    <!-- Left: copy -->
+    <div data-anim>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Miami's Fastest Web Design Studio
+      </div>
+
+      <h1 class="hero-headline">
+        Your Website.<br />
+        <span class="grad-teal">Live in 24 Hours.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Most web agencies take 6–12 weeks and charge $5,000+. We build professional, conversion-focused websites for Miami businesses in one day — starting at $399.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-orange">
+          Start My Website — $399
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="tel:+17868004865" class="btn btn-outline">Call Now</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="trust-item">
+          <span class="trust-check">✓</span>
+          No contracts
+        </div>
+        <div class="trust-item">
+          <span class="trust-check">✓</span>
+          30-day money-back guarantee
+        </div>
+        <div class="trust-item">
+          <span class="trust-check">✓</span>
+          Miami-based
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: browser mockup + stats -->
+    <div class="hero-visual" data-anim style="--delay:200ms">
+      <div class="browser-mock">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <div class="browser-dot" style="background:#FF5F57"></div>
+            <div class="browser-dot" style="background:#FEBC2E"></div>
+            <div class="browser-dot" style="background:#28C840"></div>
+          </div>
+          <div class="browser-url">sftowing.netlify.app</div>
+        </div>
+        <div class="browser-iframe-wrap">
+          <iframe src="https://sftowing.netlify.app" title="SF Towing website" loading="lazy"></iframe>
+          <div class="browser-overlay">
+            <a href="https://sftowing.netlify.app" target="_blank" rel="noopener noreferrer">
+              View Live Site
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="float-badge float-badge-1">
+        ⚡ Live in 24 Hours
+      </div>
+      <div class="float-badge float-badge-2">
+        🔒 30-Day Guarantee
+      </div>
+
+      <!-- Stats row -->
+      <div class="hero-stats" style="margin-top:20px">
+        <div class="stat-card">
+          <div class="stat-number grad-orange"><span data-target="399" data-suffix="">0</span></div>
+          <div class="stat-label">One-time setup</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number grad-teal"><span data-target="24" data-suffix="hr">0</span></div>
+          <div class="stat-label">Turnaround time</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" style="color:var(--white)"><span data-target="39" data-suffix="/mo">0</span></div>
+          <div class="stat-label">Monthly hosting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     TRUST BAR
+══════════════════════════════ -->
+<div class="trust-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">⚡ Sites Live in 24 Hours <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">💰 $399 One-Time Setup <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">🔒 30-Day Money-Back Guarantee <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">📱 100% Mobile-First Design <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">📍 Miami-Based <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">🚫 No Contracts Ever <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">🔍 Google SEO Setup Included <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">💬 Real Human Support <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">✏️ Unlimited Revisions <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">🌐 Hosting Included <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">⚡ Sites Live in 24 Hours <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">💰 $399 One-Time Setup <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">🔒 30-Day Money-Back Guarantee <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">📱 100% Mobile-First Design <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">📍 Miami-Based <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">🚫 No Contracts Ever <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">🔍 Google SEO Setup Included <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">💬 Real Human Support <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">✏️ Unlimited Revisions <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">🌐 Hosting Included <span class="marquee-sep">◆</span></span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     PROBLEM SECTION
+══════════════════════════════ -->
+<section class="problem-section" id="services">
+  <div class="orb" style="top:-50px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,107,53,.1),transparent 70%)"></div>
+  <div class="container">
+    <div class="text-center" data-anim>
+      <span class="section-tag">The Problem</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);margin:16px 0 12px">
+        Every Day Without a Website<br /><span class="grad-orange">Is Money Left on the Table</span>
+      </h2>
+      <p style="max-width:540px;margin:0 auto;font-size:17px;color:var(--text)">
+        Your competitor shows up on Google. You don't. You know where their calls are coming from.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card" data-anim>
+        <div class="problem-card-accent"></div>
+        <span class="problem-icon">📉</span>
+        <h3>You're Invisible on Google</h3>
+        <p>78% of people search online before buying local. No website = no shot. They find your competitor instead.</p>
+      </div>
+      <div class="problem-card" data-anim style="--delay:100ms">
+        <div class="problem-card-accent"></div>
+        <span class="problem-icon">💸</span>
+        <h3>Agencies Charge $3,000–$15,000</h3>
+        <p>And they take 2–3 months. That's not a website project — that's a hostage situation. You shouldn't need to refinance to go online.</p>
+      </div>
+      <div class="problem-card" data-anim style="--delay:200ms">
+        <div class="problem-card-accent"></div>
+        <span class="problem-icon">🐌</span>
+        <h3>DIY Platforms Are a Time Trap</h3>
+        <p>Squarespace and Wix are fine — if you want to spend 40 hours learning software instead of running your business.</p>
+      </div>
+      <div class="problem-card" data-anim style="--delay:300ms">
+        <div class="problem-card-accent"></div>
+        <span class="problem-icon">📵</span>
+        <h3>Your Website Doesn't Work on Mobile</h3>
+        <p>63% of local searches happen on phones. If your site breaks on mobile, your customer bounces to a competitor in 3 seconds.</p>
+      </div>
+      <div class="problem-card" data-anim style="--delay:400ms">
+        <div class="problem-card-accent"></div>
+        <span class="problem-icon">🤷</span>
+        <h3>No Calls, No Leads, No ROI</h3>
+        <p>A pretty website that nobody can find is just digital wallpaper. Most websites are built to look nice — not to convert.</p>
+      </div>
+      <div class="problem-card" data-anim style="--delay:500ms">
+        <div class="problem-card-accent"></div>
+        <span class="problem-icon">⏳</span>
+        <h3>"I'll Get a Website Soon"</h3>
+        <p>You've been saying it for 2 years. Meanwhile your competitor is getting 10 new leads a week from their site. Tomorrow costs you money.</p>
+      </div>
+    </div>
+
+    <div class="solution-callout" data-anim>
+      <p>There's a faster, cheaper way. <strong style="color:var(--white)">KevDigital fixes all of this in 24 hours.</strong> Professional site, live on Google, built for your Miami customers — for $399 flat.</p>
+      <a href="#contact" class="btn btn-orange" style="flex-shrink:0">Fix It Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     PORTFOLIO
+══════════════════════════════ -->
+<section class="portfolio-section" id="portfolio">
+  <div class="orb" style="top:0;right:-100px;width:450px;height:450px;background:radial-gradient(circle,rgba(255,107,53,.08),transparent 70%)"></div>
+  <div class="container">
+    <div class="text-center" data-anim>
+      <span class="section-tag">Our Work</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);margin:16px 0 12px">
+        Real Websites.<br /><span class="grad-teal">Real Results.</span>
+      </h2>
+      <p style="max-width:520px;margin:0 auto;font-size:17px;color:var(--text)">
+        Every site is custom, fast, and built to turn visitors into paying customers. No templates. No shortcuts.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-anim>
+        <div class="portfolio-frame">
+          <div class="portfolio-bar">
+            <div class="portfolio-dots">
+              <div class="portfolio-dot" style="background:#FF5F57"></div>
+              <div class="portfolio-dot" style="background:#FEBC2E"></div>
+              <div class="portfolio-dot" style="background:#28C840"></div>
+            </div>
+            <div class="portfolio-url">sftowing.netlify.app</div>
+          </div>
+          <div class="portfolio-iframe-wrap">
+            <iframe src="https://sftowing.netlify.app" title="SF Towing" loading="lazy"></iframe>
+            <div class="portfolio-hover">
+              <a href="https://sftowing.netlify.app" target="_blank" rel="noopener noreferrer">
+                View Live Site
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-meta">
+          <div>
+            <h3>SF Towing</h3>
+            <p>Towing &amp; Roadside Assistance</p>
+          </div>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Local SEO</span>
+            <span class="portfolio-tag">Mobile-First</span>
+            <span class="portfolio-tag">Lead Gen</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-anim style="--delay:150ms">
+        <div class="portfolio-frame">
+          <div class="portfolio-bar">
+            <div class="portfolio-dots">
+              <div class="portfolio-dot" style="background:#FF5F57"></div>
+              <div class="portfolio-dot" style="background:#FEBC2E"></div>
+              <div class="portfolio-dot" style="background:#28C840"></div>
+            </div>
+            <div class="portfolio-url">jolly-truffle-e2921f.netlify.app</div>
+          </div>
+          <div class="portfolio-iframe-wrap">
+            <iframe src="https://jolly-truffle-e2921f.netlify.app" title="Miami Local Business" loading="lazy"></iframe>
+            <div class="portfolio-hover">
+              <a href="https://jolly-truffle-e2921f.netlify.app" target="_blank" rel="noopener noreferrer">
+                View Live Site
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-meta">
+          <div>
+            <h3>Miami Local Business</h3>
+            <p>Custom Business Website</p>
+          </div>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Custom Design</span>
+            <span class="portfolio-tag">Fast Loading</span>
+            <span class="portfolio-tag">Google Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:48px;padding:40px;border-radius:24px;background:linear-gradient(135deg,rgba(0,194,203,.07),rgba(13,30,53,.8));border:1px solid rgba(0,194,203,.2);text-align:center;position:relative;overflow:hidden" data-anim>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,194,203,.1),transparent 70%);pointer-events:none;border-radius:24px"></div>
+      <h3 style="font-size:clamp(22px,3vw,30px);margin-bottom:10px;position:relative">Your Business Could Be Next</h3>
+      <p style="font-size:16px;color:var(--text);max-width:440px;margin:0 auto 28px;position:relative">Stop being invisible online. Join Miami businesses that get calls from their website every day.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;position:relative">
+        <a href="#contact" class="btn btn-orange">Start My Website — $399</a>
+        <a href="tel:+17868004865" class="btn btn-outline">Call (786) 800-4865</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     HOW IT WORKS
+══════════════════════════════ -->
+<section class="hiw-section">
+  <div class="container">
+    <div class="text-center" data-anim>
+      <span class="section-tag">The Process</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);margin:16px 0 12px">
+        From Zero to Live<br /><span class="grad-teal">in 24 Hours</span>
+      </h2>
+      <p style="max-width:500px;margin:0 auto;font-size:17px;color:var(--text)">
+        No waiting weeks. No back-and-forth for months. We have a proven system that works fast.
+      </p>
+    </div>
+
+    <div class="hiw-steps" style="position:relative">
+      <div class="hiw-step" data-anim>
+        <div class="hiw-day">Hour 1–2</div>
+        <div class="hiw-step-icon">📋</div>
+        <h3>You Tell Us About Your Business</h3>
+        <p>Fill out a short form or hop on a 15-minute call. We get your logo, brand colors, photos, and what you want the site to do.</p>
+        <ul>
+          <li>Business name, photos, services</li>
+          <li>Your phone number &amp; contact info</li>
+          <li>Anything you want customers to see first</li>
+        </ul>
+      </div>
+      <div class="hiw-step" data-anim style="--delay:150ms">
+        <div class="hiw-day">Hours 2–20</div>
+        <div class="hiw-step-icon">⚙️</div>
+        <h3>We Build While You Work</h3>
+        <p>You run your business. We build your site. Custom design, mobile-first, SEO set up, speed optimized, forms ready to catch leads.</p>
+        <ul>
+          <li>Custom design (no Squarespace templates)</li>
+          <li>Google Maps + local SEO setup</li>
+          <li>Contact forms wired and tested</li>
+        </ul>
+      </div>
+      <div class="hiw-step" data-anim style="--delay:300ms">
+        <div class="hiw-day">Hour 20–24</div>
+        <div class="hiw-step-icon">🚀</div>
+        <h3>Your Site Goes Live</h3>
+        <p>We send you a link, you approve, and we push it live. Your business is now findable online. Revisions? Unlimited. We don't stop until you love it.</p>
+        <ul>
+          <li>You review and approve the design</li>
+          <li>Unlimited revisions until it's perfect</li>
+          <li>Live link sent to your phone</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     PRICING
+══════════════════════════════ -->
+<section class="pricing-section" id="pricing">
+  <div class="orb" style="bottom:-50px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(0,194,203,.08),transparent 70%)"></div>
+  <div class="container">
+    <div class="text-center" data-anim>
+      <span class="section-tag">Pricing</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);margin:16px 0 12px">
+        Straightforward Pricing.<br /><span class="grad-orange">Zero Hidden Fees.</span>
+      </h2>
+      <p style="max-width:500px;margin:0 auto;font-size:17px;color:var(--text)">
+        One setup fee. One monthly rate. No surprises on your invoice, ever.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card" data-anim>
+        <div class="pricing-label">New Website</div>
+        <div class="pricing-price">
+          <span class="pricing-dollar">$</span>
+          <span class="pricing-amount">399</span>
+        </div>
+        <div class="pricing-desc">One-time setup fee</div>
+        <div class="pricing-features">
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Custom Design</span> — built from scratch for your brand</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Mobile-First</span> — looks perfect on every device</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Google SEO Setup</span> — local SEO configured on day 1</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Contact Forms</span> — leads go straight to your email</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Unlimited Revisions</span> — until you love every pixel</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Live in 24 Hours</span> — not 6 weeks</div></div>
+        </div>
+        <a href="#contact" class="btn btn-orange form-submit" style="font-size:15px">Get Started — $399 →</a>
+      </div>
+
+      <div class="pricing-card featured" data-anim style="--delay:150ms">
+        <div class="pricing-badge">Best Value</div>
+        <div class="pricing-label">Monthly Hosting &amp; Care</div>
+        <div class="pricing-price">
+          <span class="pricing-dollar">$</span>
+          <span class="pricing-amount grad-teal">39</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <div class="pricing-desc">After setup — cancel anytime</div>
+        <div class="pricing-features">
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Hosting Included</span> — we handle everything</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>SSL Certificate</span> — secure https:// included</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Monthly Updates</span> — text, hours, photos, prices</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Speed Monitoring</span> — we keep it fast</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>Real Human Support</span> — not a chatbot</div></div>
+          <div class="pricing-feat"><span class="pricing-feat-icon">✓</span><div><span>No Long Contracts</span> — month to month</div></div>
+        </div>
+        <a href="#contact" class="btn btn-outline form-submit" style="font-size:15px;justify-content:center">Start with $399 Setup →</a>
+      </div>
+    </div>
+
+    <!-- Value Stack -->
+    <div class="value-stack" data-anim>
+      <h3>What You're Actually Getting — The Real Value</h3>
+      <div class="value-items">
+        <div class="value-item"><span class="value-name">Custom Web Design (5 pages)</span><span class="value-price">$1,200</span></div>
+        <div class="value-item"><span class="value-name">Mobile Optimization</span><span class="value-price">$400</span></div>
+        <div class="value-item"><span class="value-name">Local SEO Setup</span><span class="value-price">$500</span></div>
+        <div class="value-item"><span class="value-name">Google Maps Integration</span><span class="value-price">$150</span></div>
+        <div class="value-item"><span class="value-name">Contact Form Setup</span><span class="value-price">$100</span></div>
+        <div class="value-item"><span class="value-name">Speed Optimization</span><span class="value-price">$200</span></div>
+        <div class="value-item"><span class="value-name">SSL + Security Setup</span><span class="value-price">$80</span></div>
+        <div class="value-item"><span class="value-name">1 Year Hosting</span><span class="value-price">$180</span></div>
+      </div>
+      <div class="value-total">
+        <span class="value-total-label">Total Value</span>
+        <div class="value-total-price">
+          <span class="value-total-old">$2,810 at any other agency</span>
+          <span class="value-total-new">You pay $399</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="comparison" data-anim style="--delay:200ms">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-kev">KevDigital</th>
+            <th class="col-agency">Traditional Agency</th>
+            <th class="col-diy">DIY (Wix/Square)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Setup Cost</td>
+            <td class="col-kev">$399</td>
+            <td class="col-agency">$3,000–$15,000</td>
+            <td class="col-diy">$0 + your time</td>
+          </tr>
+          <tr>
+            <td>Turnaround Time</td>
+            <td class="col-kev">24 Hours</td>
+            <td class="col-agency">6–12 Weeks</td>
+            <td class="col-diy">Weeks of learning</td>
+          </tr>
+          <tr>
+            <td>Custom Design</td>
+            <td class="col-kev check-yes">✓ Yes</td>
+            <td class="col-agency check-yes">✓ Yes</td>
+            <td class="col-diy check-no">✗ Template only</td>
+          </tr>
+          <tr>
+            <td>Local SEO Setup</td>
+            <td class="col-kev check-yes">✓ Included</td>
+            <td class="col-agency">$$$ Extra</td>
+            <td class="col-diy check-no">✗ Manual setup</td>
+          </tr>
+          <tr>
+            <td>Monthly Cost</td>
+            <td class="col-kev">$39/mo</td>
+            <td class="col-agency">$150–$500/mo</td>
+            <td class="col-diy">$23–$65/mo</td>
+          </tr>
+          <tr>
+            <td>Contract</td>
+            <td class="col-kev check-yes">✓ None</td>
+            <td class="col-agency check-no">✗ 12–24 months</td>
+            <td class="col-diy">Month-to-month</td>
+          </tr>
+          <tr>
+            <td>Money-Back Guarantee</td>
+            <td class="col-kev check-yes">✓ 30 Days</td>
+            <td class="col-agency check-no">✗ Never</td>
+            <td class="col-diy check-no">✗ No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Guarantee -->
+    <div class="guarantee-card" data-anim>
+      <div class="guarantee-icon">🛡️</div>
+      <div>
+        <h3>The 30-Day "Love It or Get Your Money Back" Guarantee</h3>
+        <p>Not happy with your website within 30 days of launch? We refund 100% of your setup fee. No questions, no excuses. We're that confident in what we build. In 3 years, we've never had to honor this — but you should know it exists.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     TESTIMONIALS
+══════════════════════════════ -->
+<section class="testimonials-section">
+  <div class="orb" style="bottom:0;right:0;width:400px;height:400px;background:radial-gradient(circle,rgba(0,194,203,.08),transparent 70%)"></div>
+  <div class="container">
+    <div class="text-center" data-anim>
+      <span class="section-tag">Testimonials</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);margin:16px 0 12px">
+        Miami Business Owners<br /><span class="grad-teal">Love KevDigital</span>
+      </h2>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px">
+        <span class="stars" style="font-size:18px">★★★★★</span>
+        <span style="font-size:15px;font-weight:700;color:var(--white)">5.0 / 5</span>
+        <span style="font-size:14px;color:var(--muted)">· Verified Miami clients</span>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card" data-anim>
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Kev built our site in less than a day. Professional, fast, and the phone started ringing almost immediately. Best $399 I ever spent for the business. I should have done this 2 years ago."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:#FF6B35">C</div>
+          <div>
+            <div class="reviewer-name">Carlos M.</div>
+            <div class="reviewer-biz">Miami Auto Repair</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-anim style="--delay:100ms">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"We had a website that looked like it was from 2008. Kev redesigned everything — it's modern, loads fast, and customers compliment it all the time now. He handled every detail."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:#00C2CB">M</div>
+          <div>
+            <div class="reviewer-name">Maria L.</div>
+            <div class="reviewer-biz">Coral Gables Hair Salon</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-anim style="--delay:200ms">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I was skeptical at first — $399 seemed too good to be real. But Kev delivered. My Google ranking improved in the first month and I'm getting calls from people who found me online."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:#0E4094">R</div>
+          <div>
+            <div class="reviewer-name">Robert T.</div>
+            <div class="reviewer-biz">Miami Landscaping</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-anim style="--delay:300ms">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Getting a website felt overwhelming until I found KevDigital. He handled everything — logo, content, my Google Maps listing. The whole thing was live the next day. Total game changer."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:#FF6B35">S</div>
+          <div>
+            <div class="reviewer-name">Sofia R.</div>
+            <div class="reviewer-biz">Doral Food Truck</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-anim style="--delay:400ms">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Went from zero online presence to getting 5–10 new customer inquiries per week through the website. The ROI on $399 is insane. I wish I found Kev sooner."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:#00C2CB">J</div>
+          <div>
+            <div class="reviewer-name">James P.</div>
+            <div class="reviewer-biz">Miami Beach Plumbing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-anim style="--delay:500ms">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Kev is responsive, professional, and actually cares whether your business grows. The monthly plan is super affordable and he always answers fast. Best decision I made for my business this year."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:#0E4094">A</div>
+          <div>
+            <div class="reviewer-name">Ana V.</div>
+            <div class="reviewer-biz">Hialeah Cleaning Co.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="google-badge">
+      <div class="google-badge-inner">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <div>
+          <div class="google-badge-stars">★★★★★</div>
+          <div class="google-badge-sub">5.0 on Google · Miami Web Design</div>
+        </div>
+        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="google-badge-link">View Reviews →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     CONTACT / LEAD FORM
+══════════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="orb" style="top:0;left:-50px;width:400px;height:400px;background:radial-gradient(circle,rgba(14,64,148,.15),transparent 70%)"></div>
+  <div class="container">
+    <div class="text-center" data-anim>
+      <span class="section-tag">Free Audit</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);margin:16px 0 12px">
+        Get Your Free<br /><span class="grad-teal">Website Audit</span>
+      </h2>
+      <p style="max-width:500px;margin:0 auto;font-size:17px;color:var(--text)">
+        We'll review your current online presence (or lack of one) and tell you exactly what it's costing you. Free, no pitch, no pressure.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left: contact info -->
+      <div class="contact-info" data-anim>
+        <h3>Skip the Form — Call or Text Now</h3>
+        <p>Response time is under 1 hour during business hours. We talk fast and build faster.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--teal)"/></svg>
+          </div>
+          <div><a href="tel:+17868004865">(786) 800-4865</a><br /><span style="font-size:12px;color:var(--muted)">Call or text — Mon–Fri 9am–7pm</span></div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="var(--teal)"/><polyline points="22,6 12,13 2,6" stroke="var(--teal)"/></svg>
+          </div>
+          <div><a href="mailto:kevwebdesigns1@gmail.com">kevwebdesigns1@gmail.com</a></div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="var(--teal)"/><circle cx="12" cy="10" r="3" stroke="var(--teal)"/></svg>
+          </div>
+          <div><span style="color:var(--white);font-weight:600">Miami, FL</span><br /><span style="font-size:12px;color:var(--muted)">Serving all Miami-Dade &amp; Broward</span></div>
+        </div>
+
+        <div class="contact-social">
+          <a href="https://tiktok.com/@kevwebdesigns" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.05a8.16 8.16 0 004.77 1.52V7.14a4.85 4.85 0 01-1-.45z"/></svg>
+            TikTok
+          </a>
+          <a href="https://instagram.com/kevwebdesigns1" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+            Instagram
+          </a>
+        </div>
+
+        <!-- Mini social proof -->
+        <div style="margin-top:36px;padding:24px;border-radius:16px;background:rgba(13,30,53,.5);border:1px solid var(--border)">
+          <div class="stars" style="font-size:14px;margin-bottom:10px">★★★★★</div>
+          <p style="font-size:14px;color:var(--text);line-height:1.7;margin-bottom:16px">"Responded in 20 minutes, site was live the next morning. I couldn't believe how fast it all happened."</p>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:34px;height:34px;border-radius:50%;background:#FF6B35;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#fff">D</div>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--white)">Diego M.</div>
+              <div style="font-size:11px;color:var(--muted)">Wynwood Restaurant</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="contact-form-wrap" data-anim style="--delay:200ms">
+        <h3 class="form-title">Get Your Free Audit</h3>
+        <p class="form-sub">Takes 60 seconds. We'll reply within 1 hour.</p>
+
+        <div id="contact-form">
+          <div class="form-row two">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" id="f-name" class="form-input" placeholder="Carlos" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone *</label>
+              <input type="tel" id="f-phone" class="form-input" placeholder="(305) 000-0000" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Business Name *</label>
+              <input type="text" id="f-biz" class="form-input" placeholder="Miami Auto Shop" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">What Do You Need?</label>
+              <select id="f-service" class="form-input">
+                <option value="">Select a service...</option>
+                <option>New website from scratch</option>
+                <option>Redesign my existing website</option>
+                <option>Add features to my current site</option>
+                <option>Google SEO &amp; visibility</option>
+                <option>Not sure — I just need help</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Anything else? (optional)</label>
+              <textarea id="f-msg" class="form-input" rows="3" placeholder="Tell me about your business, what you sell, and what success looks like for you..."></textarea>
+            </div>
+          </div>
+
+          <button type="button" id="form-submit-btn" class="btn btn-orange form-submit" onclick="submitForm()">
+            Send My Free Audit Request →
+          </button>
+          <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:12px">🔒 No spam. No sales pitch. Just an honest audit — free.</p>
+        </div>
+
+        <div class="form-success" id="form-success">
+          <div style="font-size:48px;margin-bottom:16px">🎉</div>
+          <h3>You're In — Expect a Reply Within 1 Hour</h3>
+          <p>Check your phone. Kev will call or text you shortly to discuss your free website audit.</p>
+          <p style="margin-top:12px;font-weight:700;color:var(--teal)">(786) 800-4865 — save this number</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     FAQ
+══════════════════════════════ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="text-center" data-anim>
+      <span class="section-tag">FAQ</span>
+      <h2 style="font-size:clamp(28px,4vw,48px);margin:16px 0 12px">
+        Questions We Get<br /><span class="grad-teal">Every Single Day</span>
+      </h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" data-anim>
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is the 24-hour thing actually real, or is that just marketing?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Real. We've launched sites for Miami businesses in as little as 8 hours once we have your info. The 24-hour promise is our standard guarantee — not a stretch goal. The key is that you need to fill out the intake form and respond to our questions quickly. If you give us everything we need, we'll have your site live the next day.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-anim style="--delay:50ms">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Why is it only $399? What's the catch?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">No catch. Traditional agencies charge $3,000–$15,000 because they have big teams, offices, and massive overhead. We're lean, efficient, and focused. We don't have a downtown office or a team of 30. We have a proven system, and we pass those savings to you. The $39/month keeps the lights on and lets us support you long-term.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-anim style="--delay:100ms">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if I don't have a logo or photos?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">We'll handle it. No logo? We design one. No photos? We source royalty-free professional images that match your business. If you have photos on your phone, even iPhone snapshots work fine to start. We've launched businesses from literally nothing but a name and a phone number. Don't let "I don't have stuff ready" be the reason you stay offline.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-anim style="--delay:150ms">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Will I own my website?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes, 100%. The website is yours. If you ever want to move to a different hosting provider, we'll give you all the files. The $39/month is for hosting and ongoing support — not for holding your site hostage. We believe in earning your loyalty every month, not locking you in.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-anim style="--delay:200ms">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How many pages does the $399 include?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">The standard package includes up to 5 pages: Home, About, Services, Gallery/Portfolio, and Contact. Most local businesses don't need more than that. If you need additional pages (menus, booking systems, e-commerce, etc.), we'll quote you separately — and it's always reasonable.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-anim style="--delay:250ms">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What does "unlimited revisions" actually mean?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">It means we don't stop until you're genuinely happy. Change the colors — done. Move a section — done. Rewrite the headline — done. The only limit is the scope of the original project. Adding entirely new pages or features after launch falls under the monthly plan or a small add-on fee. But design tweaks? Unlimited, always free.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-anim style="--delay:300ms">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What happens if I cancel the $39/month?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Your site goes offline because hosting stops. But we'll give you all the source files so you can host it yourself or with another provider. We don't delete anything. Cancel anytime — no penalties, no hard feelings. We'd rather you stay because you love working with us, not because you're trapped.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-anim style="--delay:350ms">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do you work with businesses outside Miami?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes. We're based in Miami and we specialize in South Florida businesses, but we've built sites for clients in New York, Texas, and California. If you found us and you like what you see, we'd love to work with you regardless of where you are. Everything is done remotely anyway.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="display:inline-flex">
+          <div class="nav-logo-icon">K</div>
+          <div>
+            <span class="nav-logo-text">Kev<span class="grad-teal">Digital</span></span>
+            <span class="nav-logo-sub">Miami Web Design</span>
+          </div>
+        </a>
+        <p>Professional websites for Miami local businesses. $399 setup, $39/month, live in 24 hours. No contracts, no fluff.</p>
+        <div class="footer-social">
+          <a href="https://tiktok.com/@kevwebdesigns" target="_blank" rel="noopener noreferrer" title="TikTok">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.05a8.16 8.16 0 004.77 1.52V7.14a4.85 4.85 0 01-1-.45z"/></svg>
+          </a>
+          <a href="https://instagram.com/kevwebdesigns1" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="mailto:kevwebdesigns1@gmail.com" title="Email">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">New Website Design</a></li>
+          <li><a href="#services">Website Redesign</a></li>
+          <li><a href="#services">Local SEO Setup</a></li>
+          <li><a href="#services">Mobile Optimization</a></li>
+          <li><a href="#services">Google Maps Listing</a></li>
+          <li><a href="#services">Monthly Maintenance</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="tel:+17868004865">(786) 800-4865</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:kevwebdesigns1@gmail.com">kevwebdesigns1@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Miami, FL — Miami-Dade &amp; Broward</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 KevDigital. All rights reserved.</p>
+      <p>Miami Web Design · (786) 800-4865 · <a href="mailto:kevwebdesigns1@gmail.com" style="color:var(--teal)">kevwebdesigns1@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════
+     STICKY MOBILE CTA
+══════════════════════════════ -->
+<div id="sticky-cta">
+  <a href="tel:+17868004865" class="btn btn-outline" style="font-size:13px">📞 Call Now</a>
+  <a href="#contact" class="btn btn-orange" style="font-size:13px">Free Audit →</a>
+</div>
+
+<!-- ══════════════════════════════
+     JS
+══════════════════════════════ -->
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const delay = e.target.style.getPropertyValue('--delay') || '0ms';
+      setTimeout(() => e.target.classList.add('visible'), parseInt(delay) || 0);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Mobile menu
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  menuBtn.textContent = mobileMenu.classList.contains('open') ? '✕' : '☰';
+});
+// Close menu on link click
+document.querySelectorAll('#mobile-menu a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuBtn.textContent = '☰';
+  });
+});
+
+// Sticky CTA — show after hero
+const heroEl = document.getElementById('hero');
+const stickyCta = document.getElementById('sticky-cta');
+const ctaObs = new IntersectionObserver(([e]) => {
+  stickyCta.classList.toggle('show', !e.isIntersecting);
+}, { threshold: 0 });
+ctaObs.observe(heroEl);
+
+// Counter animation
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-target') || '0', 10);
+  const suffix = el.getAttribute('data-suffix') || '';
+  const duration = 1600;
+  const steps = duration / 16;
+  const increment = target / steps;
+  let current = 0;
+  const prefix = el.closest('.stat-number') ? (el.closest('.stat-number').classList.contains('grad-orange') ? '$' : el.closest('.stat-number').classList.contains('grad-teal') ? '' : '$') : '';
+  const timer = setInterval(() => {
+    current = Math.min(current + increment, target);
+    el.textContent = (prefix ? '' : '') + Math.floor(current) + suffix;
+    if (current >= target) clearInterval(timer);
+  }, 16);
+}
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Form submit
+function submitForm() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const biz = document.getElementById('f-biz').value.trim();
+  if (!name || !phone || !biz) {
+    alert('Please fill in your name, phone, and business name.');
+    return;
+  }
+  const btn = document.getElementById('form-submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  // Simulate submission (replace with actual endpoint in production)
+  setTimeout(() => {
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    // In production: send to Netlify or a real endpoint
+    const subject = encodeURIComponent('Free Audit Request — ' + biz);
+    const body = encodeURIComponent('Name: ' + name + '\nPhone: ' + phone + '\nBusiness: ' + biz + '\nService: ' + (document.getElementById('f-service').value || 'N/A') + '\nMessage: ' + (document.getElementById('f-msg').value || 'N/A'));
+    // Fallback: open mailto (silent, won't disrupt UX)
+    try { window.location.href = 'mailto:kevwebdesigns1@gmail.com?subject=' + subject + '&body=' + body; } catch(e) {}
+  }, 1200);
+}
+</script>
+</body>
+</html>

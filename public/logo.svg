@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" fill="none" role="img" aria-label="KevDigital logo mark">
+  <!-- Left vertical bar of K -->
+  <path d="M40 36 C40 31 44 27 49 27 L61 27 C66 27 70 31 70 36 L70 184 C70 189 66 193 61 193 L49 193 C44 193 40 189 40 184 Z" fill="url(#navyGrad)"/>
+
+  <!-- Upper arm of K → orange growth arrow -->
+  <line x1="70" y1="104" x2="158" y2="34" stroke="url(#upperGrad)" stroke-width="17" stroke-linecap="round"/>
+  <!-- Arrowhead -->
+  <polygon points="151,24 167,34 152,47" fill="#FF6B35"/>
+
+  <!-- Lower arm of K → teal wave -->
+  <path d="M70 116 Q110 132 140 166" stroke="url(#lowerGrad)" stroke-width="17" stroke-linecap="round" fill="none"/>
+  <!-- Wave curl -->
+  <path d="M133 161 Q158 180 144 162 Q132 145 152 155" stroke="#00C2CB" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+  <!-- Palm tree trunk -->
+  <path d="M102 97 Q109 72 112 52" stroke="#0A6B48" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- Palm fronds -->
+  <path d="M112 52 Q96 38 83 45" stroke="#12A36A" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M112 52 Q115 34 128 38" stroke="#12A36A" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M112 52 Q126 47 130 58" stroke="#12A36A" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M112 52 Q107 40 97 43" stroke="#12A36A" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <defs>
+    <linearGradient id="navyGrad" x1="0" y1="27" x2="0" y2="193" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E4094"/>
+      <stop offset="100%" stop-color="#0A2860"/>
+    </linearGradient>
+    <linearGradient id="upperGrad" x1="70" y1="104" x2="158" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E4094"/>
+      <stop offset="55%" stop-color="#FF6B35"/>
+      <stop offset="100%" stop-color="#FF8C5E"/>
+    </linearGradient>
+    <linearGradient id="lowerGrad" x1="70" y1="116" x2="140" y2="166" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E4094"/>
+      <stop offset="100%" stop-color="#00C2CB"/>
+    </linearGradient>
+  </defs>
+</svg>

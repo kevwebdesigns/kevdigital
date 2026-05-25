@@ -1,65 +1,103 @@
 ---
-const problems = [
+const pains = [
   {
-    emoji: '🌑',
-    title: 'Your room feels boring and lifeless',
-    body: 'Plain walls, generic LED strips, nothing that actually feels like *you*. Every night feels the same.',
+    icon: '🔍',
+    title: 'Invisible on Google',
+    desc: 'When someone searches for your service in Miami, your competitors come up first — and you don\'t show up at all.',
     delay: '0',
   },
   {
-    emoji: '😩',
-    title: "You can't unwind before bed",
-    body: "Bright harsh lighting keeps your mind racing. You scroll for hours because there's nothing calming to look at.",
-    delay: '100',
+    icon: '📱',
+    title: 'Broken on Phones',
+    desc: 'Over 70% of searches happen on mobile. If your site isn\'t mobile-friendly, visitors leave in seconds.',
+    delay: '80',
   },
   {
-    emoji: '💡',
-    title: 'LED strips feel basic and overdone',
-    body: 'Everyone has the same RGB setup. They wash out, they flicker, and they never create a real atmosphere.',
-    delay: '200',
+    icon: '😬',
+    title: 'Looks Unprofessional',
+    desc: 'Customers instantly judge your business by your website. A bad site means a business they don\'t trust.',
+    delay: '160',
   },
   {
-    emoji: '😴',
-    title: 'You want a cozy aesthetic space',
-    body: 'You see those dreamy TikTok rooms and think "why does my space never look like that?"',
-    delay: '300',
+    icon: '📞',
+    title: 'Missed Calls & Revenue',
+    desc: 'Without a clear way to contact you online, customers move on to the next result. Your phone stays quiet.',
+    delay: '240',
+  },
+  {
+    icon: '⏰',
+    title: 'No Time to Build It',
+    desc: 'You run a business. You don\'t have months to learn web design — and you shouldn\'t have to.',
+    delay: '320',
+  },
+  {
+    icon: '💸',
+    title: 'Agencies Want $5,000+',
+    desc: 'Traditional agencies quote $5K–$15K for sites that take months. That\'s not realistic for a local business.',
+    delay: '400',
   },
 ];
 ---
 
-<section class="relative py-24 bg-galaxy-deep overflow-hidden">
-  <div class="glow-orb w-[350px] h-[350px] bg-purple-glow top-0 right-0 opacity-30"></div>
+<section id="services" class="relative py-24 overflow-hidden">
+  <!-- Subtle bg -->
+  <div class="glow-orb w-[400px] h-[400px] bg-teal-glow top-1/2 -left-32 opacity-25 animate-glow-pulse"></div>
 
-  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16" data-animate>
-      <span class="section-label">Sound Familiar?</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4">
-        Your Room Deserves <span class="text-gradient">Better</span>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-14" data-animate>
+      <span class="section-label">The Problem</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-2 mb-4 leading-tight">
+        Your Business Is <span class="text-gradient-orange">Invisible Online</span>
+        <br />And It's Costing You Every Day
       </h2>
-      <p class="text-galaxy-muted text-lg max-w-xl mx-auto">
-        Most people settle for boring setups because they don't know a better option exists.
+      <p class="text-kev-text/75 text-lg max-w-2xl mx-auto">
+        Right now, someone in Miami is Googling exactly what you offer.
+        If you don't have a professional website, they're calling your competitor.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      {problems.map((p) => (
+    <!-- Pain cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {pains.map((pain) => (
         <div
-          class="glass-card p-7 text-center group hover:border-galaxy-purple/40 transition-all duration-300"
+          class="glass-card p-7 group relative overflow-hidden"
           data-animate
-          style={`--delay: ${p.delay}ms`}
+          style={`--delay: ${pain.delay}ms`}
         >
-          <div class="text-4xl mb-4">{p.emoji}</div>
-          <h3 class="text-white font-bold text-lg mb-3 leading-tight">{p.title}</h3>
-          <p class="text-galaxy-muted text-sm leading-relaxed">{p.body}</p>
+          <!-- Hover shine -->
+          <div
+            class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            style="background: linear-gradient(135deg, rgba(0,194,203,0.05) 0%, transparent 60%);"
+          ></div>
+          <div class="text-4xl mb-4">{pain.icon}</div>
+          <h3 class="text-white font-bold text-base mb-2">{pain.title}</h3>
+          <p class="text-kev-muted text-sm leading-relaxed">{pain.desc}</p>
         </div>
       ))}
     </div>
 
-    <!-- Hook line -->
-    <div class="text-center mt-14" data-animate style="--delay: 400ms">
-      <p class="text-xl sm:text-2xl text-galaxy-stardust font-semibold">
-        You deserve a space that actually feels like <span class="text-gradient italic">yours.</span>
-      </p>
+    <!-- Bridge to solution -->
+    <div class="mt-14 text-center" data-animate style="--delay: 400ms">
+      <div
+        class="inline-block rounded-2xl px-8 py-6 border"
+        style="background: rgba(0,194,203,0.06); border-color: rgba(0,194,203,0.2);"
+      >
+        <p class="text-white text-xl font-bold mb-2">
+          The good news? <span class="text-gradient-teal">All of this is fixable.</span>
+        </p>
+        <p class="text-kev-text/75 text-sm max-w-lg">
+          KevDigital builds professional websites specifically for Miami local businesses
+          — at a price that makes sense. No agency markup. No fluff.
+        </p>
+        <a href="#audit" class="inline-flex items-center gap-2 mt-5 btn-orange text-sm py-3 px-7 rounded-full">
+          Fix My Online Presence
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>

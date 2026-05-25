@@ -2,10 +2,12 @@
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
 const {
-  title = 'Galaxy Moon Projection Lamp — Turn Your Room Into Another Universe',
-  description = 'Create a relaxing galaxy atmosphere in seconds with immersive moon and planet projections. USB-powered, 16 interchangeable slides. Shop now.',
+  title = 'KevDigital | Miami Web Design — Professional Websites from $399',
+  description = 'KevDigital builds professional, mobile-first websites for Miami local businesses. One-time $399 setup, then $39/month. Sites live in 7 days. Get your free website audit today.',
+  ogImage = '/og-image.jpg',
 } = Astro.props;
 ---
 
@@ -15,19 +17,56 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#050D18" />
+
+    <!-- OG / Social -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="product" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content="https://kevdigital.netlify.app" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Local SEO -->
+    <meta name="geo.region" content="US-FL" />
+    <meta name="geo.placename" content="Miami" />
+
     <title>{title}</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "KevDigital",
+        "description": "Professional web design for Miami small businesses",
+        "url": "https://kevdigital.netlify.app",
+        "telephone": "+17868004865",
+        "email": "kevwebdesigns1@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Miami",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        "priceRange": "$",
+        "openingHours": "Mo-Fr 09:00-18:00"
+      }
+    </script>
   </head>
-  <body class="bg-galaxy-void text-white overflow-x-hidden">
+  <body class="bg-kev-bg text-kev-text overflow-x-hidden">
     <slot />
 
     <script>
@@ -41,26 +80,63 @@ const {
             }
           });
         },
-        { threshold: 0.12 }
+        { threshold: 0.1 }
       );
       document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
 
-      // Sticky cart bar — show after hero leaves viewport
+      // Navbar scroll state
+      const navbar = document.getElementById('navbar');
+      if (navbar) {
+        window.addEventListener('scroll', () => {
+          navbar.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+      }
+
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('open');
+          const icon = menuBtn.querySelector('span');
+          if (icon) icon.textContent = mobileMenu.classList.contains('open') ? '✕' : '☰';
+        });
+      }
+
+      // Sticky CTA — show after hero leaves viewport
       const heroEl = document.getElementById('hero');
-      const stickyCart = document.getElementById('sticky-cart');
-      if (heroEl && stickyCart) {
-        const cartObserver = new IntersectionObserver(
+      const stickyCta = document.getElementById('sticky-cta');
+      if (heroEl && stickyCta) {
+        const ctaObserver = new IntersectionObserver(
           ([entry]) => {
-            if (!entry.isIntersecting) {
-              stickyCart.classList.add('show');
-            } else {
-              stickyCart.classList.remove('show');
-            }
+            stickyCta.classList.toggle('show', !entry.isIntersecting);
           },
           { threshold: 0 }
         );
-        cartObserver.observe(heroEl);
+        ctaObserver.observe(heroEl);
       }
+
+      // Smooth number counter animation
+      function animateCounter(el: HTMLElement) {
+        const target = parseInt(el.getAttribute('data-target') || '0', 10);
+        const duration = 1800;
+        const step = target / (duration / 16);
+        let current = 0;
+        const timer = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = Math.floor(current) + (el.getAttribute('data-suffix') || '');
+          if (current >= target) clearInterval(timer);
+        }, 16);
+      }
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target as HTMLElement);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      document.querySelectorAll('[data-target]').forEach((el) => counterObserver.observe(el));
     </script>
   </body>
 </html>

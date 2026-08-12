@@ -1,0 +1,12 @@
+{
+  "name": "kevin-10-year-dream-keynote",
+  "version": "1.0.0",
+  "description": "Kevin Hernandez - 10 Year Dream Keynote (Archbishop McCarthy High School)",
+  "scripts": {
+    "build": "node render.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  },
+  "private": true
+}

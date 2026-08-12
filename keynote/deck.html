@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kevin Hernandez — 10 Year Dream Keynote</title>
+<style>
+@font-face{
+  font-family:"InterVar";
+  src:url("fonts/Inter.ttf") format("truetype");
+  font-weight:100 900;
+  font-display:block;
+}
+
+:root{
+  --paper:#F6F5F2;
+  --ink:#17191D;
+  --muted:#5C6169;
+  --accent:#3F6189;
+  --line:#DFDCD5;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{background:#8a8a8a}
+
+body{
+  font-family:"InterVar","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+.slide{
+  position:relative;
+  width:1280px;
+  height:720px;
+  background:var(--paper);
+  color:var(--ink);
+  overflow:hidden;
+  page-break-after:always;
+  break-after:page;
+  margin:0 auto 28px;
+}
+.slide:last-child{page-break-after:auto;break-after:auto;margin-bottom:0}
+
+/* ---------- photo slots ---------- */
+.ph{position:absolute;overflow:hidden;background:#E8E5DE}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph.is-empty{
+  background:#EAE7E0;
+  box-shadow:inset 0 0 0 1px #D8D4CB;
+}
+.ph.is-empty img{display:none}
+.ph .lbl{display:none}
+.ph.is-empty .lbl{
+  display:flex;
+  position:absolute;inset:0;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:16px;
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#9A958A;
+  line-height:1.7;
+}
+
+/* ---------- type ---------- */
+.eyebrow{
+  font-size:10.5px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);
+}
+.name{font-size:62px;font-weight:600;letter-spacing:-.03em;line-height:1.02}
+.title{font-size:46px;font-weight:600;letter-spacing:-.025em;line-height:1.08}
+.mantra{font-size:25px;font-weight:500;letter-spacing:-.012em;color:var(--accent);line-height:1.35}
+.body{font-size:16.5px;font-weight:400;line-height:1.78;color:var(--muted);letter-spacing:-.003em}
+.body p+p{margin-top:15px}
+
+.pagenum{
+  position:absolute;font-size:10.5px;font-weight:500;
+  letter-spacing:.14em;color:#A6A299;
+}
+
+/* =================== 01 cover =================== */
+.s1 .ph-kevin{left:668px;top:0;width:612px;height:720px;background:#E4E1DA}
+.s1 .copy{position:absolute;left:88px;top:214px;width:500px}
+.s1 .name{margin-top:22px}
+.s1 .mantra{margin-top:30px}
+.s1 .lead{margin-top:26px;max-width:404px}
+.s1 .rule{width:34px;height:2px;background:var(--accent);margin-top:34px}
+.s1 .pagenum{left:88px;top:646px}
+
+/* =================== 02 education =================== */
+.s2 .copy{position:absolute;left:88px;top:180px;width:436px}
+.s2 .title{margin-top:20px}
+.s2 .body{margin-top:26px}
+.s2 .p1{left:596px;top:58px;width:330px;height:430px}
+.s2 .p2{left:946px;top:150px;width:268px;height:214px}
+.s2 .p3{left:946px;top:382px;width:268px;height:214px}
+.s2 .pagenum{left:88px;top:646px}
+
+/* =================== 03 career + miami =================== */
+.s3 .hero{left:0;top:0;width:1280px;height:392px;background:#DEDBD4}
+.s3.no-hero .scrim{display:none}
+.s3 .scrim{
+  position:absolute;left:0;top:0;width:1280px;height:392px;
+  background:
+    linear-gradient(to right,rgba(12,14,18,.52) 0%,rgba(12,14,18,.20) 46%,rgba(12,14,18,0) 72%),
+    linear-gradient(to bottom,rgba(12,14,18,.04) 0%,rgba(12,14,18,.10) 40%,rgba(12,14,18,.58) 100%);
+}
+.s3 .heroCopy{position:absolute;left:88px;top:262px;width:760px;color:#fff}
+.s3.no-hero .heroCopy .eyebrow{color:var(--muted)}
+.s3.no-hero .heroCopy .title{color:var(--ink)}
+.s3 .heroCopy .eyebrow{color:rgba(255,255,255,.72)}
+.s3 .heroCopy .title{color:#fff;margin-top:16px}
+.s3 .body{position:absolute;left:88px;top:440px;width:474px}
+.s3 .p1{left:700px;top:428px;width:250px;height:228px}
+.s3 .p2{left:972px;top:428px;width:250px;height:228px}
+.s3 .pagenum{left:1128px;top:676px}
+
+/* =================== 04 life outside work =================== */
+.s4 .copy{position:absolute;left:88px;top:150px;width:404px}
+.s4 .body{margin-top:26px}
+.s4 .p1{left:548px;top:56px;width:300px;height:368px}
+.s4 .p2{left:868px;top:84px;width:348px;height:168px}
+.s4 .p3{left:868px;top:272px;width:348px;height:152px}
+.s4 .p4{left:548px;top:444px;width:668px;height:196px}
+.s4 .pagenum{left:88px;top:664px}
+
+/* =================== 05 travel + reunion =================== */
+.s5 .ph-final{left:0;top:0;width:612px;height:720px;background:#E4E1DA}
+.s5 .copy{position:absolute;left:696px;top:150px;width:496px}
+.s5 .title{margin-top:20px}
+.s5 .body{margin-top:26px;max-width:470px}
+.s5 .closing{
+  margin-top:34px;padding-top:26px;
+  border-top:1px solid var(--line);
+  font-size:20px;font-weight:500;line-height:1.5;
+  letter-spacing:-.014em;color:var(--accent);
+  max-width:462px;
+}
+.s5 .pagenum{left:1096px;top:646px}
+
+@page{size:13.333in 7.5in;margin:0}
+@media print{
+  html,body{background:#fff}
+  .slide{margin:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 01 ============ -->
+<section class="slide s1">
+  <figure class="ph ph-kevin">
+    <img src="photos/kevin.jpg" alt="">
+    <span class="lbl">[ Add Kevin photo here ]<br>photos / kevin.jpg</span>
+  </figure>
+
+  <div class="copy">
+    <div class="eyebrow">Archbishop McCarthy High School &nbsp;·&nbsp; 10 Year Dream Keynote</div>
+    <h1 class="name">Kevin<br>Hernandez</h1>
+    <p class="mantra">Build a life that feels like mine.</p>
+    <div class="rule"></div>
+    <p class="body lead">In 10 years I hope to be back in Miami, running my own business, with a family and a life I'm proud of.</p>
+  </div>
+
+  <div class="pagenum">01 / 05</div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="slide s2">
+  <div class="copy">
+    <div class="eyebrow">Education</div>
+    <h2 class="title">The Next Step</h2>
+    <div class="body">
+      <p>After McCarthy I want to go to college and study business. I'm most interested in the entrepreneurship side of it — finance, marketing, and how a company actually runs day to day.</p>
+      <p>I also want to use college to meet people and get real experience, not just sit in class. An internship, a job, whatever I can get. And if I come up with an idea I believe in, I'd like to try starting something small while I'm still in school.</p>
+    </div>
+  </div>
+
+  <figure class="ph p1"><img src="photos/campus.jpg" alt=""><span class="lbl">College campus</span></figure>
+  <figure class="ph p2"><img src="photos/studying.jpg" alt=""><span class="lbl">Studying</span></figure>
+  <figure class="ph p3"><img src="photos/business.jpg" alt=""><span class="lbl">Business class<br>/ notebook</span></figure>
+
+  <div class="pagenum">02 / 05</div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="slide s3">
+  <figure class="ph hero"><img src="photos/miami.jpg" alt=""><span class="lbl">Miami skyline</span></figure>
+  <div class="scrim"></div>
+  <div class="heroCopy">
+    <div class="eyebrow">Career &nbsp;·&nbsp; Miami, Florida</div>
+    <h2 class="title">Building My Own Thing</h2>
+  </div>
+
+  <div class="body">
+    <p>Ten years out, I picture myself in Miami running my own business. I don't know exactly what it will be yet — that's the honest answer. I just know I want it to be mine.</p>
+    <p>I'm fine with working a lot, especially early on. What I really want is control over my own time, enough money that I'm not worried about money, and something I built that I'd put my name on.</p>
+  </div>
+
+  <figure class="ph p1"><img src="photos/workspace.jpg" alt=""><span class="lbl">Small office<br>/ workspace</span></figure>
+  <figure class="ph p2"><img src="photos/work.jpg" alt=""><span class="lbl">Working<br>/ small business</span></figure>
+
+  <div class="pagenum">03 / 05</div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="slide s4">
+  <div class="copy">
+    <div class="eyebrow">Life outside of work</div>
+    <h2 class="title">The Life I Want</h2>
+    <div class="body">
+      <p>Outside of work I keep picturing something pretty normal, honestly. A wife, two kids, a dog, and a house with enough room for people to come over. Sundays with family. The same friends I have now, still around.</p>
+      <p>I want to stay in the gym, get to the beach when I can, keep up with my teams, and probably spend too much on a car at some point.</p>
+    </div>
+  </div>
+
+  <figure class="ph p1"><img src="photos/family.jpg" alt=""><span class="lbl">Family</span></figure>
+  <figure class="ph p2"><img src="photos/dog.jpg" alt=""><span class="lbl">Dog</span></figure>
+  <figure class="ph p3"><img src="photos/beach.jpg" alt=""><span class="lbl">Miami beach</span></figure>
+  <figure class="ph p4"><img src="photos/hobby.jpg" alt=""><span class="lbl">Gym / friends / car — something you actually do</span></figure>
+
+  <div class="pagenum">04 / 05</div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="slide s5">
+  <figure class="ph ph-final"><img src="photos/barcelona.jpg" alt=""><span class="lbl">Barcelona, Spain</span></figure>
+
+  <div class="copy">
+    <div class="eyebrow">The reunion</div>
+    <h2 class="title">See You in 10</h2>
+    <div class="body">
+      <p>If it goes the way I hope: I'm living in Miami, running my own business, and I show up with my wife, our two kids, and the dog in the car.</p>
+      <p>By then I want to have made it to Barcelona — Spain is the one trip I really want to take. Comfortable, not rich. Proud of what I built, and still close with the same people I care about now.</p>
+    </div>
+    <p class="closing">I know it won't go exactly like this. I just want to look back and know it was all mine.</p>
+  </div>
+
+  <div class="pagenum">05 / 05</div>
+</section>
+
+<script>
+/* Show a labelled frame for any photo that hasn't been added yet. */
+document.querySelectorAll('.ph').forEach(function(fig){
+  var img = fig.querySelector('img');
+  if(!img){ fig.classList.add('is-empty'); return; }
+  var mark = function(){ fig.classList.add('is-empty'); };
+  if(img.complete){
+    if(!img.naturalWidth) mark();
+  } else {
+    img.addEventListener('error', mark);
+    img.addEventListener('load', function(){ if(!img.naturalWidth) mark(); });
+  }
+});
+
+/* The slide 3 hero scrim only makes sense once a real photo is behind it.
+   Wait for window load so every image has finished loading or failed. */
+window.addEventListener('load', function(){
+  var hero = document.querySelector('.s3 .hero');
+  if(hero && hero.classList.contains('is-empty')){
+    document.querySelector('.s3').classList.add('no-hero');
+  }
+});
+</script>
+</body>
+</html>

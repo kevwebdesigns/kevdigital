@@ -6,22 +6,19 @@
 
 ## Adding photos
 
-The deck is finished except for the pictures. Every photo slot is currently a
-labelled grey frame telling you what goes there.
+Five photos, one per slide. Every slot is currently a labelled grey frame.
 
-1. Put your images in the `photos/` folder using the exact file names listed in
-   `photos/README.txt` (`kevin.jpg`, `miami.jpg`, `barcelona.jpg`, and so on).
+1. Put your images in the `photos/` folder using these exact names:
+   `kevin.jpg`, `campus.jpg`, `miami.jpg`, `family.jpg`, `barcelona.jpg`
+   (details and shapes are in `photos/README.txt`).
 2. Run `npm install` once, then `npm run build`.
 3. The PDF rebuilds with your photos in place.
 
-Any photo you skip simply stays as a grey frame, so you can add them a few at a
-time. Photos of you and your own family/dog/friends will look far more real than
-stock images — use those where you can.
-
-For the places you can't photograph yourself (Miami skyline, Barcelona, a
-college campus), free-to-use photos are at
-[unsplash.com](https://unsplash.com) and [pexels.com](https://pexels.com) —
-search the place name, download, rename, drop in.
+Any photo you skip stays a grey frame, so you can add them one at a time.
+Two of the five are yours (`kevin.jpg`, `family.jpg`) and will look far more
+real than stock. The other three are places you can't photograph yourself —
+free-to-use photos are at [unsplash.com](https://unsplash.com) and
+[pexels.com](https://pexels.com).
 
 ## Editing the words
 

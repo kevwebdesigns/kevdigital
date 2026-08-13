@@ -2,6 +2,11 @@
 
 **Submit this file:** `Kevin-Hernandez-10-Year-Dream-Keynote.pdf`
 
+**To edit in Keynote:** open `Kevin-Hernandez-10-Year-Dream-Keynote.pptx`.
+Keynote reads PowerPoint files directly, so every heading, paragraph and
+photo comes in as a real object you can click and change. Opening the PDF
+instead would give you five flat pictures with no editable text.
+
 5 slides, 16:9 widescreen, built to be shown full-screen.
 
 ## Adding photos
@@ -30,12 +35,21 @@ doesn't sound like you, then run `npm run build` again.
 | File | What it is |
 | --- | --- |
 | `Kevin-Hernandez-10-Year-Dream-Keynote.pdf` | The file you hand in |
+| `Kevin-Hernandez-10-Year-Dream-Keynote.pptx` | Open this in Keynote to edit |
 | `deck.html` | The source — edit text and layout here |
 | `photos/` | Drop your images here |
 | `preview/` | PNG of each slide, for a quick look |
 | `render.mjs` | Script that turns `deck.html` into the PDF |
+| `build-pptx.py` | Script that turns `deck.html`'s layout into the .pptx |
 
 ## Design
 
 Inter typeface · off-white `#F6F5F2` · near-black `#17191D` · muted blue accent
 `#3F6189`. Page numbers run `01 / 05`.
+
+## Rebuilding
+
+`npm run build` regenerates the PDF and the slide previews from `deck.html`.
+`python3 build-pptx.py` regenerates the PowerPoint file. Editing in Keynote
+does not feed back into `deck.html`, so once you start editing in Keynote,
+treat that file as the one you're working in.

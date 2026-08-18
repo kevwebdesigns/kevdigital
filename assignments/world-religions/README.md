@@ -4,30 +4,25 @@ Slide-show assignment for World Religions class (due Thursday, August 20, 8:25 a
 
 ## Files
 
-- `Intro-to-Study-of-World-Religions.pptx` — the submission (15 slides, 16:9, speaker notes on every slide)
-- `build-deck.js` — the pptxgenjs generator that produces the deck (`node build-deck.js`)
+- `Intro-to-Study-of-World-Religions.pptx` (the submission, 7 slides)
+- `build-deck.js` (the pptxgenjs generator: `node build-deck.js`)
 
 ## Before submitting
 
-Slide 1 still has bracketed placeholders. Replace them with:
+Slide 1 has bracketed placeholders. Replace `[Your First and Last Name]` with your
+name, and either fill in or delete the partner line.
 
-- `[Your First and Last Name]` — your first and last name
-- `[Partner's First and Last Name — if applicable]` — your partner's name, or delete the line if you worked alone
+## Slides
 
-## Contents
-
-| Slides | Section |
+| Slide | Assignment requirement |
 | --- | --- |
-| 1 | Title slide (assignment title + names) |
-| 2 | Part 1 divider |
-| 3–6 | Part 1: one similarity each for Christianity & Judaism, Islam, Hinduism, Buddhism |
-| 7 | Part 2 divider |
-| 8–9 | Part 2 Q1: definitions of religion, ecumenism, evangelization, myths |
-| 10 | Part 2 Q2: three reasons to study the world's religions |
-| 11–12 | Part 2 Q3: why Christians should engage in interreligious dialogue |
-| 13–14 | Part 2 Q4: the four common elements or patterns of religious traditions |
-| 15 | Chapter summary and the Peace Prayer |
+| 1 | Title of assignment and student name(s) |
+| 2 | Part 1: Christianity & Judaism, Christianity & Islam |
+| 3 | Part 1: Christianity & Hinduism, Christianity & Buddhism |
+| 4 | Part 2, Q1: religion, ecumenism, evangelization, myths |
+| 5 | Part 2, Q2: three reasons to study the world's religions |
+| 6 | Part 2, Q3: why Christians should engage in interreligious dialogue |
+| 7 | Part 2, Q4: the four common elements or patterns |
 
-Part 2 content is drawn from Chapter 1, "Beginning the Journey," of Nancy Clemmons,
-S.N.J.M., *Exploring the Religions of Our World*, Third Edition (Notre Dame, IN:
-Ave Maria Press, 2022).
+Part 2 content comes from Chapter 1, "Beginning the Journey," of *Exploring the
+Religions of Our World*, Third Edition (Ave Maria Press).
